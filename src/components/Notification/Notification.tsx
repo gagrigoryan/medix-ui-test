@@ -10,7 +10,7 @@ const Notification: React.FC<NotificationProps> = ({ text, actionText, onActionC
   return (
     <div className={clsx(styles.notificationContainer, className)}>
       <ErrorIcon className={styles.icon} size={EIconSize.XSmall} />
-      <p className={styles.text}>{text}</p>
+      <p className={styles.text}>{text} eboy</p>
       {!!actionText && (
         <OutlinedButton onClick={onActionClick} isSmall isLight>
           {actionText}
