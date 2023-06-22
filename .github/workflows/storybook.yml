@@ -21,4 +21,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: storybook-staging
-          FOLDER: docs
+          FOLDER: storybook-static
+          CLEAN: true
+          TARGET_FOLDER: docs
