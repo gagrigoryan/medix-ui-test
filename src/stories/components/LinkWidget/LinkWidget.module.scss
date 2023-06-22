@@ -1,0 +1,12 @@
+@import "../../../styles/colors";
+
+.container {
+  background-color: $neutralExtraLight;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.containerLight {
+  background-color: $neutralBlack;
+  color: $white;
+}

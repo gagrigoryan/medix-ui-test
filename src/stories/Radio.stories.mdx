@@ -1,0 +1,52 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Radio } from "../components";
+
+<Meta title="Control/Radio" component={Radio} />
+
+export const Template = ({name, label, ...args}) => {
+    return (
+        <fieldset style={{display: "flex", gridGap: "30px", border: "none", padding: 0}}>
+            <Radio {...args} label={label ? `${label} 1` : ""} name={name} value={1} />
+            <Radio {...args} label={label ? `${label} 2` : ""} name={name} value={2} />
+        </fieldset>
+    )
+}
+
+# Радио кнопка
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{ name: "story-1", checked: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Label" args={{label: "Radio Label", name: "story-2", checked: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{ name: "story-3", label: "Radio Label", isDisabled: true, checked: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Error" args={{ name: "story-4", label: "Radio Label", isError: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Required" args={{ name: "story-5", label: "Radio Label", isRequired: true, checked: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Radio} />
+
+### Использование:
+Для использования следует импортировать компонент `Radio` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Radio} from "marketplace-ui-kit";
+        ...
+        <Radio label="Some label" />
+        <Radio isDisabled label="Some label" />
+        <Radio isError label="Some label" />
+        <Radio isRequired label="Some label" />
+  `}
+/>

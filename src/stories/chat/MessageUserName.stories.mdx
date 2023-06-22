@@ -1,0 +1,38 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { MessageUserName } from "../../components";
+
+<Meta title="Chat/Message/MessageUserName" component={MessageUserName} />
+
+
+export const Template = (args) => {
+    return (
+        <MessageUserName {...args} />
+    );
+}
+
+# Имя собеседника
+
+<Canvas isColumn>
+    <Story name="Base" args={{name: "Alice Cuddy"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Post" args={{name: "Alice Cuddy", post: "MD"}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={MessageUserName} />
+
+### Использование:
+Для использования следует импортировать компонент `MessageUserName` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {MessageUserName} from "marketplace-ui-kit";
+        ...
+        <MessageUserName name="Alice Cuddy" post="MD" />
+  `}
+/>

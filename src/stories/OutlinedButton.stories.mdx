@@ -1,0 +1,56 @@
+import {Canvas, Meta, Story, Source, ArgsTable} from "@storybook/addon-docs/blocks";
+import {OutlinedButton} from "../components"; import StoryCard from "./components/StoryCard";
+
+<Meta
+    title="Button/Outlined Button"
+    component={OutlinedButton}
+/>
+
+export const Template = ({isLight, ...args}) => {
+    return (
+        <StoryCard isDark={isLight} isDense={!isLight}>
+            <OutlinedButton isLight={isLight} {...args}>Button</OutlinedButton>
+            <OutlinedButton isLight={isLight} isSmall {...args}>Button</OutlinedButton>
+        </StoryCard>
+    );
+}
+
+# Кнопка (Outlined)
+
+<Canvas>
+    <Story name="Base">
+        {Template.bind({})}
+    </Story>
+    <Story name="Colored" args={{isColored: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Light" args={{isLight: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Light Disabled" args={{isLight: true, isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={OutlinedButton} />
+
+### Использование:
+
+Для использования следует импортировать компонент `OutlinedButton` из `marketplace-ui-kit`.
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {OutlinedButton} from "marketplace-ui-kit";
+        ...
+        <OutlinedButton>Button</OutlinedButton>
+        <OutlinedButton isSmall >Button</OutlinedButton>
+        <OutlinedButton isColored >Button</OutlinedButton>
+        <OutlinedButton isDisabled >Button</OutlinedButton>
+        <OutlinedButton isLight >Button</OutlinedButton>
+  `}
+/>

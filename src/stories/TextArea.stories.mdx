@@ -1,0 +1,93 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {TextArea} from "../components";
+
+<Meta title="TextField/TextArea" component={TextArea} />
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "400px"}}>
+            <TextArea {...args} />
+        </div>
+    );
+}
+
+# Текстовое поле
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{label: "Label", placeholder: "TextArea text"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Min Rows" args={{label: "Min rows", placeholder: "TextArea text", rows: 4}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Max Rows" args={{label: "Max rows", placeholder: "TextArea text", rows: 3, maxRows: 5}}>
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="With Description"
+        args={{label: "With Description", placeholder: "TextArea text", description: "Description", rows: 3}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Clearable"
+        args={{label: "Clearable", placeholder: "TextArea text", description: "Description", isClearable: true, rows: 3}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Disabled"
+        args={{label: "Disabled", placeholder: "TextArea text", description: "Description", isDisabled: true, rows: 3}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Error"
+        args={{label: "Error", placeholder: "TextArea text", description: "Description", error: "Error message", rows: 3}}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={TextArea} />
+
+### Использование:
+Для использования следует импортировать компонент `TextArea` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {TextArea, VisibleIcon} from "marketplace-ui-kit";
+        ...
+        <TextArea label="Label" placeholder="Placeholder" />
+        <TextArea label="Label" placeholder="Placeholder" description="Description" />
+        <TextArea
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isClearable
+        />
+        <TextArea
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isDisabled
+        />
+        <TextArea
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isClearable
+            suffixIcon={<VisibleIcon />}
+            onSuffixIconClick={() => {}}
+        />
+        <TextArea
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isRequired
+        />
+  `}
+/>

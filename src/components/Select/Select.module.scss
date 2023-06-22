@@ -1,0 +1,174 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/baseInput.module";
+@import "../../styles/typography.module";
+
+.container {
+  .controlContainer {
+    color: $typographyMain;
+    background: $white;
+    border: 1px solid $neutralLight;
+    border-radius: get-vw(8px);
+    height: get-module(10);
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $neutralActiveDark;
+    }
+  }
+
+  .controlContainerFocused {
+    border: 1px solid $mxMain;
+  }
+
+  .controlContainerError {
+    border: 1px solid $accentRedMedium;
+
+    &:hover {
+      border: 1px solid $accentRedMedium;
+    }
+  }
+
+  .placeholderContainer {
+    color: $typographyLight;
+  }
+
+  .menuContainer {
+    box-shadow: 0 get-vw(4px) get-vw(16px) rgba(0, 0, 0, 0.18);
+    border-radius: get-vw(8px);
+    padding: 0;
+    margin: get-module(1) 0;
+
+    & > div {
+      padding: 0;
+      border-radius: get-vw(8px);
+    }
+  }
+
+  .optionContainer {
+    display: flex;
+    align-items: center;
+    height: get-module(10);
+    padding: 0 get-module(3);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $typographyMain;
+    background-color: $white;
+    text-transform: capitalize;
+
+    &:active {
+      background-color: transparent;
+      box-shadow: 0 get-vw(1px) get-vw(6px) rgba(0, 0, 0, 0.2);
+    }
+
+    &:first-child {
+      margin-top: get-module(2.5);
+    }
+
+    &:last-child {
+      margin-bottom: get-module(2.5);
+    }
+  }
+
+  .optionContainerFocused {
+    position: relative;
+    color: $typographyMain;
+    box-shadow: 0 get-vw(3px) get-vw(18px) rgba(0, 0, 0, 0.14);
+  }
+
+  .optionContainerSelected {
+    box-shadow: none;
+    background-color: $mxWhite;
+  }
+}
+
+.containerError {
+  composes: inputContainerError;
+}
+
+.containerDense {
+  .controlContainer {
+    height: get-module(9);
+    min-height: get-module(9);
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid transparent;
+
+      .valueContainer {
+        & > div {
+          color: $mxMain;
+        }
+      }
+
+      svg path {
+        stroke: $mxMain;
+      }
+    }
+  }
+
+  .controlContainerFocused {
+    border: 1px solid $mxMain;
+
+    .valueContainer {
+      & > div {
+        color: $typographyMain;
+      }
+    }
+
+    &:hover {
+      border: 1px solid $mxMain;
+
+      .valueContainer {
+        & > div {
+          color: $typographyMain;
+        }
+      }
+
+      svg path {
+        stroke: $typographyMain;
+      }
+    }
+  }
+
+  .menuContainer {
+    height: get-module(47);
+
+    & > div {
+      height: get-module(47);
+    }
+  }
+}
+
+.containerDisabled {
+  cursor: not-allowed;
+
+  .controlContainer {
+    background-color: $neutralLightClean;
+    border: 1px solid $neutralLightClean;
+  }
+
+  &:hover {
+    svg path {
+      stroke: $neutralLight;
+    }
+  }
+}
+
+.controlContainer {
+  composes: baseInput;
+  min-width: unset;
+}
+
+.dropdownIndicatorIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 get-module(2);
+}
+
+.arrowIcon {
+  transform: rotate(-90deg);
+}

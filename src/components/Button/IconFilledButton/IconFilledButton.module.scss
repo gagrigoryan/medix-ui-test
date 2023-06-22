@@ -1,0 +1,45 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+@import "../../../styles/elevation.module";
+
+.buttonElevation {
+  box-shadow: 0 get-vw(2px) get-vw(8px) rgba(0, 0, 0, 0.1);
+}
+
+.iconFilledContainer {
+  composes: buttonElevation;
+  composes: elevationHintOnHover;
+  composes: elevationRaisedOnActive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: get-module(4);
+
+  svg {
+    width: get-module(5);
+    height: get-module(5);
+    margin-right: get-module(1);
+  }
+
+  &:hover {
+    svg path {
+      stroke: $mxMedium;
+    }
+  }
+
+  &:active {
+    color: $mxExtraDark;
+    svg path {
+      stroke: $mxExtraDark;
+    }
+  }
+
+  &:disabled {
+    box-shadow: none;
+    background-color: $neutralLight;
+    color: $neutralExtraLight;
+    svg path {
+      stroke: $neutralExtraLight;
+    }
+  }
+}

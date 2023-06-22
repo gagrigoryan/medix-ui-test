@@ -1,0 +1,56 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {DatePicker} from "../components";
+
+<Meta title="Picker/DatePicker" component={DatePicker} />
+
+export const Template = (args) => {
+    return (
+        <div style={{
+            display: "flex",
+            gridGap: "40px"
+        }}>
+            <DatePicker {...args} />
+            <DatePicker {...args} isDouble />
+        </div>
+    );
+}
+
+# Поле выбора даты
+
+<Canvas isColumn>
+    <Story name="Base" args={{label: "Label", description: "Date Picker"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{label: "Disabled", description: "Date Picker", isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Error" args={{label: "Error", error: "Error message"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Required" args={{label: "Required", description: "Date Picker", isRequired: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Value" args={{label: "Value", description: "Date Picker", value: "08.03.2023 - 22.03.2023"}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={DatePicker} />
+
+### Использование:
+Для использования следует импортировать компонент `DatePicker` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {DatePicker} from "marketplace-ui-kit";
+        ...
+        <DatePicker label="Label" description="Placeholder" />
+        <DatePicker label="Disabled" description="Placeholder" isDisabled />
+        <DatePicker label="Error" description="Placeholder" error="Error Message" />
+        <DatePicker label="Required" description="Placeholder" isDisabled />
+        <DatePicker label="With value" description="Placeholder" value: "08.03.2023 - 22.03.2023" />
+  `}
+/>

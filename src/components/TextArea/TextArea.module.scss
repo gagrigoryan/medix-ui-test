@@ -1,0 +1,39 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/baseInput.module";
+
+.container {
+  composes: inputContainer;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.containerClearable {
+  .textarea {
+    padding-right: get-module(9);
+  }
+}
+
+.containerError {
+  composes: inputContainerError;
+}
+
+.textarea {
+  composes: baseInput;
+  width: 100%;
+  min-height: get-module(5);
+  padding: get-module(2.5) get-module(2) get-module(2.5) get-module(3);
+  resize: none;
+}
+
+.actionWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: get-module(2);
+  position: absolute;
+  top: get-module(5);
+  right: 0;
+  padding: get-module(2.5) get-module(2);
+}

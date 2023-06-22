@@ -1,0 +1,45 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Notification } from "../components";
+
+<Meta title="Notification" component={Notification} />
+
+export const Template = (args) => {
+    return (<Notification {...args} />);
+}
+
+# Уведомления
+
+<Canvas>
+    <Story name="Base" args={{text: "Sample notification text", onClose: undefined}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Closable" args={{text: "Sample notification text", onClose: () => {}}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Action" args={{text: "Sample notification text", actionText: "Cancel", onClose: () => {}}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Notification} />
+
+### Использование:
+Для использования следует импортировать компонент `Notification` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Notification} from "marketplace-ui-kit";
+        ...
+        <Notification text="Sample notification text" />
+        <Notification text="Sample notification text" onClose={() => {}} /> // Closable
+        <Notification
+            text="Sample notification text"
+            actionText: "Cancel"
+            onActionClick={() => {}}
+            onClose={() => {}}
+        /> // With action
+  `}
+/>

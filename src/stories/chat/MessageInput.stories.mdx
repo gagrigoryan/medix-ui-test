@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import {MessageInput} from "../../components";
+
+<Meta title="Chat/Message/MessageInput" component={MessageInput} />
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "690px"}}>
+            <MessageInput {...args} />
+        </div>
+    );
+}
+
+# Поле ввода сообщения
+
+<Canvas isColumn>
+    <Story name="Base" args={{}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={MessageInput} />

@@ -1,0 +1,45 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { SearchedMessage } from "../../components";
+
+<Meta title="Chat/Searched/SearchedMessage" component={SearchedMessage} />
+
+export const MessageText = "I must explain to you how all this tumor boards mistaken idea of denoun cing pleasure and praising pais mistaken idea of denoun cing pleasure and praising pai"
+export const ImageSrc = "https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "492px"}}>
+            <SearchedMessage title="Hanna Septimus" time="10:49 pm" {...args} />
+        </div>
+    );
+}
+
+# Карточка для поиска в сообщениях
+
+<Canvas isColumn>
+    <Story name="Base" args={{text: MessageText}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Image" args={{text: MessageText, image: ImageSrc}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Searched Text" args={{text: MessageText, searchedText: "tu"}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={SearchedMessage} />
+
+### Использование:
+Для использования следует импортировать компонент `SearchedMessage` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {SearchedMessage} from "marketplace-ui-kit";
+        ...
+        <SearchedMessage title="Hanna Septimus" text="..." searchedText="tu" />
+  `}
+/>

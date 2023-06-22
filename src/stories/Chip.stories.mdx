@@ -1,0 +1,44 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Chip } from "../components";
+
+<Meta title="Control/Chip" component={Chip} />
+
+export const Template = (args) => {
+    return (<Chip {...args} />);
+}
+
+# Чип
+
+<Canvas>
+    <Story name="Base" args={{value: "Chips Text"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{value: "Chips Text", isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Active" args={{value: "Chips Text", isActive: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Active Disabled" args={{value: "Chips Text", isActive: true, isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Chip} />
+
+### Использование:
+Для использования следует импортировать компонент `Chip` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Chip} from "marketplace-ui-kit";
+        ...
+        <Chip value="Chips Text" />
+        <Chip isDisabled value="Chips Text" />
+        <Chip isActive value="Chips Text" />
+        <Chip onClick={() => {}} value="Chips Text" />
+  `}
+/>

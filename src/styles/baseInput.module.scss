@@ -1,0 +1,80 @@
+@import "./mixins.scss";
+@import "./colors.scss";
+@import "./typography.module.scss";
+
+.ellipsisText {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainerError {
+  .label,
+  .description {
+    color: $accentRedMedium;
+  }
+
+  .baseInput,
+  .baseInput:hover,
+  .baseInput:focus {
+    border: 1px solid $accentRedMedium;
+  }
+}
+
+.label {
+  composes: pSmall;
+  composes: ellipsisText;
+  color: $typographyMain;
+}
+
+.description {
+  composes: pSmall;
+  composes: ellipsisText;
+  color: $typographyLight;
+}
+
+.baseInput {
+  composes: pMain;
+  min-width: get-module(100);
+  margin: get-module(1) 0;
+  outline: none;
+  color: $typographyMain;
+  background: $white;
+  border: 1px solid $neutralLight;
+  border-radius: get-vw(8px);
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: $neutralLight;
+  }
+
+  &:hover {
+    border: 1px solid $neutralActiveDark;
+  }
+
+  &:focus {
+    border: 1px solid $mxMain;
+  }
+
+  &:disabled {
+    background-color: $neutralLightClean;
+    border: 1px solid $neutralLightClean;
+    color: $typographyLight;
+
+    &::placeholder {
+      color: $typographyLight;
+    }
+  }
+}
+
+.requiredSign {
+  margin-left: get-module(1);
+  color: $accentRedMedium;
+}

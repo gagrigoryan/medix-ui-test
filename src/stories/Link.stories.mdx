@@ -1,0 +1,37 @@
+import LinkWidget from "./components/LinkWidget";
+import { Canvas, Meta, Story, Source } from "@storybook/addon-docs/blocks";
+
+<Meta title="Link" component="{LinkWidget}" />
+
+export const Template = (args) => {
+    return (<LinkWidget {...args} />);
+}
+
+# Ссылки
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{text: "Текстовая ссылка"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Light" args={{text: "Текстовая ссылка", isLight: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Использование:
+
+Для использования следует импортировать модуль стилей `link.module.scss` из `marketplace-ui-kit/lib/styles`.
+<Source
+    language='css'
+    dark
+    format={true}
+    code={`
+        @import "~marketplace-ui-kit/lib/styles/link.module.scss";
+        .myLink {
+            composes: mxLink;
+        }
+        .myLinkLight {
+            composes: mxLinkLight;
+        }
+  `}
+/>

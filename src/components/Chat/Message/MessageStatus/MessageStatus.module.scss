@@ -1,0 +1,56 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+@import "../../../../styles/typography.module";
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  composes: pSmall;
+  color: $neutralActiveDark20;
+}
+
+.textEdited {
+  composes: text;
+  margin-right: get-module(5);
+}
+
+.iconWrapper {
+  margin-left: get-module(1);
+}
+
+.icon {
+  width: get-module(4);
+  height: get-module(4);
+
+  svg {
+    width: get-module(4);
+    height: get-module(4);
+  }
+}
+
+.sentIcon {
+  composes: icon;
+
+  svg path {
+    stroke: $neutralActiveDark20;
+  }
+}
+
+.deliveredIcon {
+  composes: icon;
+
+  svg path {
+    fill: $neutralActiveDark20;
+  }
+}
+
+.errorIcon {
+  composes: icon;
+
+  svg path {
+    fill: $accentRedBright;
+  }
+}

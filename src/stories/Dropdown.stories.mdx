@@ -1,0 +1,67 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {Dropdown, RemoteIcon, StarIcon, TrashIcon} from "../components";
+import {EIconSize} from "../domain/entities/icon";
+
+<Meta title="Dropdown/Dropdown" component={Dropdown} />
+
+export const dropdownOptions = [
+    {
+        label: "Favourite messages",
+        value: "1",
+        icon: <StarIcon size={EIconSize.Small} />
+    },
+    {
+        label: "Go to dialogue",
+        value: "2",
+        icon: <TrashIcon size={EIconSize.Small} />
+    },
+    {
+        label: "Remove favourite",
+        value: "3",
+        icon: <RemoteIcon size={EIconSize.Small} />
+    }
+]
+
+export const Template = (args) => {
+    return (<Dropdown {...args} />);
+}
+
+# Выпадающий список
+
+<Canvas>
+    <Story name="Base" args={{options: dropdownOptions}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Dropdown} />
+
+### Использование:
+Для использования следует импортировать компонент `Dropdown` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Dropdown, StarIcon, TrashIcon} from "marketplace-ui-kit";
+        const dropdownOptions = [
+            {
+                label: "Favourite messages",
+                value: "1",
+                icon: <StarIcon size={EIconSize.Small} />
+            },
+            {
+                label: "Go to dialogue",
+                value: "2",
+                icon: <TrashIcon size={EIconSize.Small} />
+            },
+            ...
+        ]
+        ...
+        <Dropdown
+            options={dropdownOptions}
+            onSelect={option => {}}
+        />
+  `}
+/>

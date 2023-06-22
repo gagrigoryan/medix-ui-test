@@ -1,0 +1,41 @@
+@import "../../styles/mixins";
+
+.baseIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  composes: baseIcon;
+  width: get-module(8);
+  height: get-module(8);
+}
+
+.iconLarge {
+  composes: baseIcon;
+  width: get-module(10);
+  height: get-module(10);
+}
+
+.iconSmall {
+  composes: baseIcon;
+  width: get-module(6);
+  height: get-module(6);
+}
+
+.iconXSmall {
+  composes: baseIcon;
+  width: get-module(5);
+  height: get-module(5);
+
+  .svg {
+    width: get-module(5);
+    height: get-module(5);
+  }
+}
+
+.svg {
+  width: get-module(6);
+  height: get-module(6);
+}

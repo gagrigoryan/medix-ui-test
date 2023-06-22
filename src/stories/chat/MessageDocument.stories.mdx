@@ -1,0 +1,48 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { MessageDocument } from "../../components";
+
+<Meta title="Chat/Message/MessageDocument" component={MessageDocument} />
+
+export const ImageSrc = "https://images.unsplash.com/photo-1543769657-fcf1236421bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2835&q=80"
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "340px", padding: "20px 0"}}>
+            <MessageDocument {...args} />
+        </div>
+    );
+}
+
+# Прикрепленный документ
+
+<Canvas isColumn>
+    <Story name="Base" args={{
+        name: "Hepatitis C virus antibody test (ELISA)",
+        previewImage: ImageSrc,
+        size: "3,2 MB",
+        date: "03.31.2022"
+    }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={MessageDocument} />
+
+### Использование:
+Для использования следует импортировать компонент `MessageDocument` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {MessageDocument} from "marketplace-ui-kit";
+        ...
+        <MessageDocument
+            name="Document Name"
+            previewImage="./image.jpg"
+            size="3,2 MB"
+            date="03.31.2022"
+        />
+  `}
+/>

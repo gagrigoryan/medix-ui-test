@@ -1,0 +1,79 @@
+import {Canvas, Meta, Story, Source, ArgsTable} from "@storybook/addon-docs/blocks";
+import {PlusIcon, TextButton} from "../components";
+import StoryCard from "./components/StoryCard";
+
+<Meta
+    title="Button/Text Button"
+    component={TextButton}
+/>
+
+export const Template = ({isLight, icon, isIconAtEnd, ...args}) => {
+    return (
+        <StoryCard isDark={isLight} isDense={!isLight}>
+            <TextButton
+                style={icon && !isIconAtEnd ? {transform: "translateY(25%)"} : undefined}
+                isIconAtEnd={isIconAtEnd}
+                icon={icon}
+                isLight={isLight}
+                {...args}
+            >
+                Button
+            </TextButton>
+            <TextButton
+                style={icon && !isIconAtEnd ? {transform: "translateY(25%)"} : undefined}
+                isIconAtEnd={isIconAtEnd}
+                icon={icon}
+                isLight={isLight}
+                isDisabled
+                {...args}
+            >
+                Button
+            </TextButton>
+        </StoryCard>
+    );
+}
+
+# Кнопка (Text)
+
+<Canvas>
+    <Story name="Base">
+        {Template.bind({})}
+    </Story>
+    <Story name="Without Decoration" args={{isDecorated: false}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Icon" args={{icon: <PlusIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Icon At End" args={{icon: <PlusIcon />, isIconAtEnd: true }}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Light" args={{isLight: true }}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Light With Icon" args={{icon: <PlusIcon />, isLight: true }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={TextButton} />
+
+### Использование:
+
+Для использования следует импортировать компонент `TextButton` из `marketplace-ui-kit`.
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {TextButton} from "marketplace-ui-kit";
+        ...
+        <TextButton>Button</TextButton>
+        <TextButton isDisabled >Button</TextButton>
+        <TextButton icon={<SomeIcon />} >Button</TextButton>
+        <TextButton isDisabled icon={<SomeIcon />} >Button</TextButton>
+        <TextButton isIconAtEnd icon={<SomeIcon />} >Button</TextButton>
+        <TextButton isLight >Button</TextButton>
+        <TextButton isLight icon={<SomeIcon />} >Button</TextButton>
+  `}
+/>

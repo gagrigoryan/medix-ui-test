@@ -1,0 +1,79 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.container {
+  position: relative;
+  width: max-content;
+
+  // TODO: needs refactoring
+  &:hover {
+    .inputContainer {
+      border: 1px solid $neutralActiveDark;
+
+      &:disabled {
+        border: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.containerError {
+  &:hover {
+    .inputContainer {
+      border: 1px solid $accentRedMedium;
+    }
+  }
+}
+
+.labelContainer {
+  div {
+    right: get-module(6);
+  }
+}
+
+.inputContainer {
+  width: get-module(31);
+  min-width: get-module(31);
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+.inputContainerSmall {
+  width: get-module(25);
+  min-width: get-module(25);
+}
+
+.inputContainerLarge {
+  width: get-module(40);
+  min-width: get-module(40);
+}
+
+.arrowWrapper {
+  position: absolute;
+  top: get-module(6);
+  right: get-module(2);
+  display: flex;
+  flex-direction: column;
+  width: get-module(4);
+}
+
+.arrowButtonDown {
+  transform: rotate(180deg);
+}
+
+.arrowIcon {
+  width: get-module(4);
+  height: get-module(4);
+
+  svg {
+    height: get-module(4);
+  }
+}

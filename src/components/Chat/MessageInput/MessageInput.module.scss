@@ -1,0 +1,47 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+@import "../../../styles/typography.module";
+@import "../../../styles/_elevation.scss";
+
+.container {
+  composes: mx-elevation-main;
+  display: flex;
+  align-items: flex-end;
+  padding: get-module(4) get-module(6);
+  background-color: $white;
+}
+
+.containerDisabled {
+  composes: container;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: get-module(18);
+  padding: 0;
+}
+
+.text {
+  composes: pSmall;
+  text-align: center;
+  color: $typographyLight;
+}
+
+.textarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 get-module(4);
+  height: unset;
+
+  textarea {
+    margin: 0;
+  }
+}
+
+.attachButton {
+  margin-bottom: get-module(2);
+}
+
+.sendButton {
+  flex-shrink: 0;
+}

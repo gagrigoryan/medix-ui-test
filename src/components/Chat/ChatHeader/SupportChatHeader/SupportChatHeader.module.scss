@@ -1,0 +1,17 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+@import "../../../../styles/typography.module";
+
+.container {
+  max-width: 68%;
+}
+
+.title {
+  composes: headingH3SemiBold;
+  margin-bottom: get-module(1);
+}
+
+.text {
+  composes: pSmall;
+  color: $typographyLight;
+}

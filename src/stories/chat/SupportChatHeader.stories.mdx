@@ -1,0 +1,41 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { SupportChatHeader } from "../../components";
+
+<Meta title="Chat/Header/SupportChatHeader" component={SupportChatHeader} />
+
+export const ImageSrc = "https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "692px"}}>
+            <SupportChatHeader {...args} />
+        </div>
+    );
+}
+
+# Шапка чата для службы поддержки
+
+<Canvas isColumn>
+    <Story name="Base" args={{image: ImageSrc, title: "MediXSpace Support", description: "Hey there! You can use this dialogue to solve any technical problems with our platform. Feel free to write to us."}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Without Image" args={{title: "MediXSpace Support", description: "Hey there! You can use this dialogue to solve any technical problems with our platform. Feel free to write to us."}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={SupportChatHeader} />
+
+### Использование:
+Для использования следует импортировать компонент `SupportChatHeader` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {SupportChatHeader} from "marketplace-ui-kit";
+        ...
+        <SupportChatHeader image="./image.png" title="title" description="..." />
+  `}
+/>

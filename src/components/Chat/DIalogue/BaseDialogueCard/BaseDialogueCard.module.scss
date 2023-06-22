@@ -1,0 +1,37 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+@import "../../../../styles/elevation.module";
+
+.container {
+  composes: elevationHintOnHover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: get-module(3);
+
+  &:hover {
+    background-color: $white;
+  }
+}
+
+.containerActive {
+  background-color: $mxExtraLight;
+
+  &:hover {
+    background-color: $mxExtraLight;
+    box-shadow: none;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+}
+
+.avatarWrapper {
+  margin-right: get-module(3);
+  flex-shrink: 0;
+}

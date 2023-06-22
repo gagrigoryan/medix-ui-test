@@ -1,0 +1,39 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Tooltip } from "../components";
+import TooltipWidget from "./components/TooltipWidget";
+
+<Meta title="Tooltip" component={TooltipWidget} />
+
+export const Template = ({...args}) => {
+    return (
+        <TooltipWidget {...args} />
+    )
+}
+
+export const currentMonth = new Date().getMonth()
+
+# Календарь
+
+<Canvas>
+    <Story name="Base">
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Tooltip} />
+
+### Использование:
+Для использования следует импортировать компонент `Tooltip` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Tooltip} from "marketplace-ui-kit";
+        ...
+         <Tooltip text="Tooltip text" placement="left">
+            <span>Trigger</span>
+        </Tooltip>
+  `}
+/>

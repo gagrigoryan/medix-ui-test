@@ -1,0 +1,49 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+@import "../../styles/elevation.module";
+@import "../../styles/_elevation.scss";
+
+.container {
+  composes: mx-elevation-dropdown;
+  display: inline-block;
+  min-width: get-module(45);
+  padding: get-module(2) 0;
+  border-radius: get-vw(8px);
+  background-color: $white;
+}
+
+.containerFixed {
+  margin-top: get-module(2);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listItem {
+}
+
+.dropdownItem {
+  composes: elevationHintOnHover;
+  composes: elevationRaisedOnActive;
+  composes: pMain;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: get-module(10);
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+  padding: 0 get-module(2);
+
+  &:hover {
+    position: relative;
+  }
+}
+
+.dropdownItemValue {
+  margin-left: get-module(2);
+}

@@ -1,0 +1,50 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Checkbox } from "../components";
+
+<Meta title="Control/Checkbox" component={Checkbox} />
+
+export const Template = (args) => {
+    return (<Checkbox {...args} />);
+}
+
+# Чекбокс
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{label: "Placeholder"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{label: "Placeholder", isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Checked Disabled" args={{label: "Placeholder", isDisabled: true, checked: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Error" args={{label: "Placeholder", isError: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Required" args={{label: "Placeholder", isRequired: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Required Error" args={{label: "Placeholder", isRequired: true, isError: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Checkbox} />
+
+### Использование:
+Для использования следует импортировать компонент `Checkbox` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Checkbox} from "marketplace-ui-kit";
+        ...
+        <Checkbox label="Some label" />
+        <Checkbox isDisabled label="Some label" />
+        <Checkbox isError label="Some label" />
+        <Checkbox isRequired label="Some label" />
+  `}
+/>

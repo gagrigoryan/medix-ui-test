@@ -1,0 +1,21 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/typography.module";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: get-module(5);
+  background-color: $mxMain;
+  border-radius: get-vw(10px);
+  padding: 0 get-module(1.5);
+  box-sizing: border-box;
+}
+
+.value {
+  composes: pSmall;
+  line-height: get-module(5);
+  color: $white;
+}

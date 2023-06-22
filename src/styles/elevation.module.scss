@@ -1,0 +1,13 @@
+@import "mixins";
+
+.elevationHintOnHover {
+  &:hover {
+    box-shadow: 0 get-vw(3px) get-vw(18px) rgba(0, 0, 0, 0.14);
+  }
+}
+
+.elevationRaisedOnActive {
+  &:active {
+    box-shadow: 0 get-vw(1px) get-vw(6px) rgba(0, 0, 0, 0.2);
+  }
+}

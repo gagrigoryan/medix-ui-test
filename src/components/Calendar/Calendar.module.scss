@@ -1,0 +1,12 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/_elevation.scss";
+
+.container {
+  composes: mx-elevation-dropdown;
+  width: get-module(86);
+  padding: get-module(4) get-module(8);
+  background-color: $white;
+  border-radius: get-vw(8px);
+  box-sizing: border-box;
+}

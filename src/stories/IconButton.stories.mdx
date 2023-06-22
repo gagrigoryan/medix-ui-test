@@ -1,0 +1,63 @@
+import {Canvas, Meta, Story, Source, ArgsTable} from "@storybook/addon-docs/blocks";
+import {TrashIcon, PaperPlaneIcon, IconButton} from "../components";
+import StoryCard from "./components/StoryCard";
+
+<Meta
+    title="Button/Icon Button"
+    component={IconButton}
+/>
+
+export const Template = ({isLight, isRounded, ...args}) => {
+    return (
+        <StoryCard isDark={isLight && !isRounded || !isLight && isRounded} isDense={!isLight && !isRounded }>
+            <IconButton
+                isLight={isLight}
+                isRounded={isRounded}
+                {...args}
+            />
+            <IconButton
+                isLight={isLight}
+                isRounded={isRounded}
+                isDisabled
+                {...args}
+            />
+        </StoryCard>
+    );
+}
+
+# Кнопка (Text)
+
+<Canvas>
+    <Story name="Base" args={{icon: <TrashIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Light" args={{icon: <TrashIcon />, isLight: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Rounded" args={{icon: <PaperPlaneIcon />, isRounded: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Rounded Light" args={{icon: <PaperPlaneIcon />, isLight: true, isRounded: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={IconButton} />
+
+### Использование:
+
+Для использования следует импортировать компонент `IconButton` из `marketplace-ui-kit`.
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {IconButton, TrashIcon, EIconSize} from "marketplace-ui-kit";
+        ...
+        <IconButton icon={<TrashIcon />} />
+        <IconButton isDisabled icon={<TrashIcon />} />
+        <IconButton icon={<TrashIcon size={EIconSize.Large} />} />
+        <IconButton isLight icon={<TrashIcon />} />
+        <IconButton isDisabled isLight icon={<TrashIcon />} />
+  `}
+/>

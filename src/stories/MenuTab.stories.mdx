@@ -1,0 +1,55 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { MenuTab } from "../components";
+import StoryCard from "./components/StoryCard";
+
+<Meta title="Control/Tabs/MenuTab" component={MenuTab} />
+
+export const Template = (args) => {
+    return (
+       <div style={{display: "flex", alignItems: "center"}}>
+           <StoryCard>
+               <MenuTab {...args} value="Clinical trials" />
+           </StoryCard>
+           <StoryCard isDark>
+               <MenuTab isDark {...args} value="Clinical trials" />
+           </StoryCard>
+       </div>
+    );
+}
+
+# Меню таб
+
+<Canvas isColumn>
+    <Story name="Base" args={{}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Active" args={{isActive: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Index" args={{index: 4}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={MenuTab} />
+
+### Использование:
+Для использования следует импортировать компонент `MenuTab` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {MenuTab} from "marketplace-ui-kit";
+        ...
+        <MenuTab value="Tab value" />
+        <MenuTab isDark value="Tab value" />
+        <MenuTab isActive value="Tab value" />
+        <MenuTab isDisabled value="Tab value" />
+        <MenuTab index={4} value="Tab value" />
+  `}
+/>

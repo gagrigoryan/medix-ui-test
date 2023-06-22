@@ -1,0 +1,57 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+@import "../../../styles/typography.module";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.containerDark {
+  .buttonContainer {
+    color: $white50;
+  }
+
+  .buttonContainerActive {
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.buttonContainer {
+  composes: pMain;
+  color: $typographyLight;
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: $mxMedium;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      color: $typographyLight;
+    }
+  }
+}
+
+.buttonContainerActive {
+  color: $typographyMain;
+  border-bottom: 1px solid $mxMain;
+
+  &:hover {
+    color: $typographyMain;
+  }
+}
+
+.badge {
+  margin-left: get-module(2);
+}

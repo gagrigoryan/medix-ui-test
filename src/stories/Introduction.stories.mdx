@@ -1,0 +1,47 @@
+import { Meta, Source } from "@storybook/addon-docs/blocks";
+
+<Meta title="Documentation/Introduction"/>
+
+# Введение
+
+<br />
+
+## Установка:
+<Source
+    language='bash'
+    dark
+    format={true}
+    code={`
+        yarn add "marketplace-ui-kit"
+        // or
+        npm install "marketplace-ui-kit"
+  `}
+/>
+
+## Использование:
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import { SomeComponent } from "marketplace-ui-kit";
+        import "marketplace-ui-kit/lib/esm/index.css"
+        ...
+        <SomeComponent {...props} />
+  `}
+/>
+
+## Тема:
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import { usePalette, EPalette } from "marketplace-ui-kit";
+        ...
+        function App() {
+            usePalette(EPalette.DoctorApp);
+            ...
+        }
+`}
+/>

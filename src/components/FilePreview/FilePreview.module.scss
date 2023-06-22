@@ -1,0 +1,68 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: get-module(16);
+  padding: 0 get-module(12);
+  background-color: $neutralBlack;
+  box-sizing: border-box;
+}
+
+.filename {
+  composes: headingH2SemiBold;
+  color: $white;
+}
+
+.button {
+  svg path {
+    stroke: $white;
+  }
+
+  &:not(:last-child) {
+    margin-right: get-module(3);
+  }
+}
+
+.contentWrapper {
+  width: 70vw;
+  max-width: 1000px;
+  height: 75vh;
+}
+
+.actionWrapper {
+  position: absolute;
+  bottom: get-module(4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  height: get-module(10);
+  padding: 0 get-module(2);
+  background-color: rgba($neutralBlack, 0.8);
+  border-radius: get-vw(8px);
+  box-sizing: border-box;
+}
+
+.actionButton {
+  composes: button;
+
+  &:not(:last-child) {
+    margin-right: get-module(4);
+  }
+}
+
+.actionButtonFilled {
+  margin-right: get-module(4);
+
+  svg path {
+    fill: $white;
+  }
+}

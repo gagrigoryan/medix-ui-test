@@ -1,0 +1,12 @@
+$sourceWidth: 1440;
+$sourceWidthMax: 1680;
+
+@function get-vw($target) {
+  @return $target;
+}
+
+@function get-module($target) {
+  $result: ($target * 4) * 1px;
+
+  @return get-vw($result);
+}

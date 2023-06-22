@@ -1,0 +1,53 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+@import "../../../styles/typography.module";
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: get-module(22);
+  padding: get-module(3);
+  box-sizing: border-box;
+}
+
+.avatar {
+  flex-shrink: 0;
+}
+
+.infoWrapper {
+  margin-left: get-module(3);
+  margin-right: get-module(3);
+}
+
+.title {
+  composes: headingH3SemiBold;
+}
+
+.text {
+  composes: pSmall;
+  margin-top: get-module(1);
+  color: $typographyLight;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.textSelected {
+  color: $typographyMain;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.time {
+  composes: pSmall;
+  width: get-module(16);
+  max-width: get-module(16);
+  color: $neutralActiveDark20;
+  align-self: flex-start;
+  flex-shrink: 0;
+  margin-top: get-module(1);
+  text-align: right;
+}

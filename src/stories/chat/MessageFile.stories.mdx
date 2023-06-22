@@ -1,0 +1,38 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { MessageFile } from "../../components";
+
+<Meta title="Chat/Message/MessageFile" component={MessageFile} />
+
+export const ImageSrc = "https://images.unsplash.com/photo-1566396223585-c8fbf7fa6b6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1849&q=80"
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "340px", padding: "20px 0"}}>
+            <MessageFile {...args} />
+        </div>
+    );
+}
+
+# Прикрепленный файл
+
+<Canvas isColumn>
+    <Story name="Base" args={{filename: "File with long very name 01.pdf", previewImage: ImageSrc}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={MessageFile} />
+
+### Использование:
+Для использования следует импортировать компонент `MessageFile` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {MessageFile} from "marketplace-ui-kit";
+        ...
+        <MessageFile filename="file.pdf" previewImage="./image.jpg" />
+  `}
+/>

@@ -1,0 +1,86 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+@import "../../styles/_elevation.scss";
+
+.container {
+  composes: mx-elevation-main;
+  width: 100%;
+  height: get-module(15);
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: get-vw(1680px);
+  margin: 0 auto;
+  padding: 0 get-module(10);
+  box-sizing: border-box;
+}
+
+.brandLogo {
+  width: get-module(40);
+  height: get-module(9);
+}
+
+.menuWrapper {
+  width: get-module(268);
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listItem {
+  &:not(:last-child) {
+    margin-right: get-module(10);
+  }
+}
+
+.actionWrapper {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.actionButton {
+  composes: pSmall;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: get-module(6);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.actionButtonCurrency {
+  color: $mxMain;
+  font-weight: 700;
+  margin-right: get-module(1);
+}
+
+.actionButtonIcon {
+  width: get-module(3.5);
+  height: get-module(2);
+  margin-right: get-module(1);
+
+  svg {
+    width: get-module(3.5);
+    height: get-module(2);
+  }
+}

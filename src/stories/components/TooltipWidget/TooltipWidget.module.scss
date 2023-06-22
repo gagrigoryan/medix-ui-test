@@ -1,0 +1,16 @@
+@import "../../../styles/mixins";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: get-module(60);
+}
+
+.list {
+  display: flex;
+  grid-gap: get-module(6);
+  padding: 0;
+  list-style: none;
+}

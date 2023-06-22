@@ -1,0 +1,48 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
+.outlinedContainer {
+  background: none;
+  color: $neutralActiveDark;
+  border: 1px solid $neutralActiveDark;
+
+  &:hover {
+    color: $mxMedium;
+    border: 1px solid $mxMedium;
+  }
+
+  &:active {
+    color: $mxExtraDark;
+    border: 1px solid $mxExtraDark;
+  }
+
+  &:disabled {
+    color: $neutralLight;
+    border: 1px solid $neutralLight;
+  }
+}
+
+.outlinedContainerColored {
+  color: $mxMain;
+  border: 1px solid $mxMain;
+}
+
+.outlinedContainerLight {
+  color: $white;
+  border: 1px solid $white;
+
+  &:hover {
+    color: $mxMedium;
+    border: 1px solid $mxMedium;
+  }
+
+  &:active {
+    color: $mxLight;
+    border: 1px solid $mxLight;
+  }
+
+  &:disabled {
+    color: $white50;
+    border: 1px solid $white50;
+  }
+}

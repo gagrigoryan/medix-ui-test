@@ -1,0 +1,44 @@
+@import "../../../styles/colors";
+
+.filledContainer {
+  border: none;
+  background-color: $neutralActiveDark;
+
+  &:hover {
+    background-color: $mxMedium;
+  }
+
+  &:active {
+    background-color: $mxExtraDark;
+  }
+
+  &:disabled {
+    background-color: $neutralLight;
+    cursor: not-allowed;
+  }
+}
+
+.filledContainerLight {
+  background-color: $white;
+  color: $typographyMain;
+
+  &:hover {
+    background-color: $white;
+    color: $mxMedium;
+  }
+
+  &:active {
+    background-color: $white;
+    color: $mxMain;
+  }
+
+  &:disabled {
+    background-color: $white50;
+    cursor: not-allowed;
+    color: $neutralLight;
+  }
+}
+
+.filledContainerColored {
+  background-color: $mxMain;
+}

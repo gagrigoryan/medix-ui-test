@@ -1,0 +1,22 @@
+@import "../../../styles/mixins";
+
+.container {
+  width: 100%;
+  padding: get-module(4) get-module(6) get-module(2) get-module(3);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: get-module(10);
+  height: get-module(10);
+  margin-right: get-module(3);
+}
+
+.labelContainer {
+  width: 100%;
+  height: unset;
+}

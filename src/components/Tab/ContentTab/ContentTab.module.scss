@@ -1,0 +1,43 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+@import "../../../styles/typography.module";
+
+.container {
+  border-radius: get-vw(20px) get-vw(20px) 0 0;
+  overflow: hidden;
+}
+
+.buttonContainer {
+  composes: pMain;
+  width: 100%;
+  padding: get-module(2) get-module(4) get-module(8);
+  color: $typographyMedium;
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: 700;
+    color: $mxMedium;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      font-weight: 400;
+      color: $typographyMedium;
+    }
+  }
+}
+
+.buttonContainerActive {
+  color: $white;
+  background-color: $neutralActiveDark;
+
+  &:hover {
+    font-weight: 400;
+    color: $white;
+  }
+}

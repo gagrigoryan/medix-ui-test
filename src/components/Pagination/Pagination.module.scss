@@ -1,0 +1,51 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+.arrowButton {
+  width: get-module(8);
+  height: get-module(8);
+  margin-right: get-module(1);
+
+  svg {
+    width: get-module(8);
+    height: get-module(8);
+
+    path {
+      stroke: $neutralLight;
+    }
+  }
+}
+
+.arrowButtonNext {
+  composes: arrowButton;
+  margin-right: 0;
+  margin-left: get-module(1);
+  transform: rotate(180deg);
+}
+
+.paginationButton {
+  width: get-module(10);
+  height: get-module(10);
+  color: $typographyLight;
+}
+
+.paginationButtonActive {
+  color: $white;
+  background-color: $mxMain;
+  border-radius: 50%;
+
+  &:hover {
+    color: $white;
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../../styles/mixins";
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  grid-gap: get-module(10);
+}
+
+.card {
+  width: get-module(100);
+}

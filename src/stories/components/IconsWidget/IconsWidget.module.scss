@@ -1,0 +1,13 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  grid-gap: get-module(3);
+}
+
+.item {
+  background-color: $mxExtraLight;
+  border-radius: get-vw(4px);
+}

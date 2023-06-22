@@ -1,0 +1,122 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    .box {
+      border: 2px solid $mxMedium;
+    }
+
+    .input:checked + .box {
+      border: get-vw(6px) solid $mxMedium;
+    }
+  }
+}
+
+.containerDisabled {
+  cursor: not-allowed;
+
+  .label,
+  .requiredSign {
+    color: $typographySubtext;
+  }
+
+  .box {
+    border: 1px solid $neutralMediumClean;
+
+    &:hover {
+      border: 1px solid $neutralMediumClean;
+    }
+  }
+
+  .input:checked + .box {
+    border: get-vw(6px) solid rgba($neutralMediumClean, 0.52);
+
+    &:hover {
+      border: get-vw(6px) solid rgba($neutralMediumClean, 0.52);
+    }
+  }
+
+  &:hover {
+    .box {
+      border: 1px solid $neutralMediumClean;
+    }
+
+    .input:checked + .box {
+      border: get-vw(6px) solid rgba($neutralMediumClean, 0.52);
+    }
+  }
+}
+
+.containerError {
+  .label {
+    color: $accentRedMedium;
+  }
+
+  .box {
+    border: 1px solid $accentRedMedium;
+
+    &:hover {
+      border: 1px solid $accentRedMedium;
+    }
+  }
+
+  .input:checked + .box {
+    border: get-vw(6px) solid $accentRedMedium;
+
+    &:hover {
+      border: get-vw(6px) solid $accentRedMedium;
+    }
+  }
+
+  &:hover {
+    .box {
+      border: 1px solid $accentRedMedium;
+    }
+
+    .input:checked + .box {
+      border: get-vw(6px) solid $accentRedMedium;
+    }
+  }
+}
+
+.input {
+  display: none;
+
+  &:checked + .box {
+    border: get-vw(6px) solid $neutralActiveDark;
+
+    &:hover {
+      border: get-vw(6px) solid $mxMedium;
+    }
+  }
+}
+
+.box {
+  width: get-module(5);
+  height: get-module(5);
+  margin-right: get-module(3);
+  border-radius: 50%;
+  border: 1px solid $neutralActiveDark;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  &:hover {
+    border: 2px solid $mxMedium;
+  }
+}
+
+.label {
+  composes: pMain;
+  color: $typographyMain;
+}
+
+.requiredSign {
+  margin-left: get-module(1);
+  color: $accentRedMedium;
+}

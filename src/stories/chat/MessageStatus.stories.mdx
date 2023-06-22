@@ -1,0 +1,54 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {EMessageStatus, MessageStatus} from "../../components";
+
+<Meta title="Chat/Message/MessageStatus" component={MessageStatus} />
+
+export const Template = (args) => {
+    return (
+        <MessageStatus {...args} />
+    );
+}
+
+# Статус сообщения
+
+<Canvas isColumn>
+    <Story name="Base" args={{time: "10:15 pm"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Sent" args={{time: "10:15 pm", status: EMessageStatus.Sent}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Delivered" args={{time: "10:15 pm", status: EMessageStatus.Delivered}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Read" args={{time: "10:15 pm", status: EMessageStatus.Read}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Error" args={{time: "10:15 pm", status: EMessageStatus.Error}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Edited" args={{time: "10:15 pm", isEdited: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Edited With Status" args={{time: "10:15 pm", isEdited: true, status: EMessageStatus.Delivered}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={MessageStatus} />
+
+### Использование:
+Для использования следует импортировать компонент `MessageStatus` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {MessageStatus, EMessageStatus} from "marketplace-ui-kit";
+        ...
+        <MessageStatus time="10:15 pm" />
+        <MessageStatus time="10:15 pm" status={EMessageStatus.Sent} />
+        <MessageStatus isEdited time="10:15 pm" status={EMessageStatus.Sent} />
+  `}
+/>

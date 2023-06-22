@@ -1,0 +1,9 @@
+@import "./mixins.scss";
+
+.mx-container {
+  width: calc(100% - 240px);
+  min-width: get-vw(1200px);
+  max-width: get-vw(1440px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}

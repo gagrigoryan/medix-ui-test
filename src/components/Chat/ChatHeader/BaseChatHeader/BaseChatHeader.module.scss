@@ -1,0 +1,53 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+@import "../../../../styles/_elevation.scss";
+
+.container {
+  composes: mx-elevation-main;
+  width: 100%;
+  background-color: $white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: get-module(3) get-module(5) get-module(3) get-module(4);
+  box-sizing: border-box;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  padding: get-module(3) get-module(5) get-module(3) get-module(4);
+  border-top: 1px solid $neutralLightClean;
+}
+
+.searchInput {
+  width: 100%;
+  height: unset;
+  margin-right: get-module(5);
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+}
+
+.avatarWrapper {
+  margin-right: get-module(4);
+  flex-shrink: 0;
+}
+
+.actionWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.actionButton {
+  &:not(:last-child) {
+    margin-right: get-module(5);
+  }
+}

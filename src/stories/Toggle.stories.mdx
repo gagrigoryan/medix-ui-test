@@ -1,0 +1,56 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Toggle } from "../components";
+
+<Meta title="Control/Toggle" component={Toggle} />
+
+export const Template = (args) => {
+    return (<Toggle {...args} />);
+}
+
+# Переключатель (Toggle)
+
+<Canvas isColumn>
+    <Story name="Base">
+        {Template.bind({})}
+    </Story>
+    <Story name="With Label" args={{label: "With Label"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Active" args={{label: "Active", defaultChecked: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{label: "Disabled", isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Active Disabled" args={{label: "Active Disabled", isDisabled: true, defaultChecked: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Error" args={{label: "With Error", isError: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Required" args={{label: "Required", isRequired: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Toggle} />
+
+### Использование:
+Для использования следует импортировать компонент `Toggle` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Toggle} from "marketplace-ui-kit";
+        ...
+        <Toggle />
+        <Toggle label="With Label" />
+        <Toggle isDisabled label="With Label" />
+        <Toggle defaultChecked label="With Label" />
+        <Toggle isDisabled defaultChecked label="With Label" />
+        <Toggle isError label="With Label" />
+        <Toggle isRequired label="With Label" />
+  `}
+/>

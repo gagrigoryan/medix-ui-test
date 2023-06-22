@@ -1,0 +1,42 @@
+import { Canvas, Meta, Story, Source } from "@storybook/addon-docs/blocks";
+import LayoutWidget from "./components/LayoutWidget";
+
+<Meta title="Layout/Grid" component={LayoutWidget} />
+
+export const Template = (args) => {
+    return (<LayoutWidget {...args} />);
+}
+
+# Сетка
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{colClassName: "mx-col-1", startClassName: "mx-start-1"}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Использование:
+
+Для реализации следует использовать классы `.mx-row, .mx-col-{$index}, .mx-start-{$index}`
+<Source
+    language='html'
+    dark
+    format={true}
+    code={`
+         <div className="mx-row">
+            <div className="mx-col-4" />
+            <div className="mx-col-4" />
+            <div className="mx-col-4" />
+        </div>
+  `}
+/>
+<Source
+    language='html'
+    dark
+    format={true}
+    code={`
+        <div className="mx-row">
+            <div className="mx-col-4 mx-start-5" />
+        </div>
+  `}
+/>

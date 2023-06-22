@@ -1,0 +1,9 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+
+.container {
+  width: get-module(8);
+  height: get-module(8);
+  max-width: get-module(8);
+  max-height: get-module(8);
+}

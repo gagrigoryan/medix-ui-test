@@ -1,0 +1,19 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
+.container {
+  display: flex;
+  align-items: center;
+  grid-gap: get-module(5);
+  background-color: $white;
+  padding: get-module(5) get-module(4);
+  border-radius: get-vw(16px);
+}
+
+.containerDark {
+  background-color: $neutralBlack;
+}
+
+.containerDense {
+  padding: get-module(5) 0;
+}

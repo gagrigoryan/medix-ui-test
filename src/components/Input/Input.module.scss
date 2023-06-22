@@ -1,0 +1,34 @@
+@import "../../styles/baseInput.module";
+
+.container {
+  composes: inputContainer;
+  position: relative;
+  height: get-module(20);
+  width: max-content;
+}
+
+.containerError {
+  composes: inputContainerError;
+}
+
+.actionWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: get-module(2);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0 get-module(2);
+}
+
+.input {
+  composes: baseInput;
+  height: get-module(10);
+  padding: 0 get-module(9) 0 get-module(3);
+}
+
+.inputCompressed {
+  padding: 0 get-module(16) 0 get-module(3);
+}

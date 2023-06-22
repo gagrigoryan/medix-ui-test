@@ -1,0 +1,46 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { ContentTab } from "../components"; import StoryCard from "./components/StoryCard";
+
+<Meta title="Control/Tabs/ContentTab" component={ContentTab} />
+
+export const Template = ({isActive, ...args}) => {
+    return (
+        <StoryCard isDark={!isActive}>
+            <div style={{width: "200px"}}>
+                <ContentTab {...args} value="Content Tab" isActive={isActive} />
+            </div>
+        </StoryCard>
+    );
+}
+
+# Контент таб
+
+<Canvas>
+    <Story name="Base" args={{}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Active" args={{isActive: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={ContentTab} />
+
+### Использование:
+Для использования следует импортировать компонент `ContentTab` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {ContentTab} from "marketplace-ui-kit";
+        ...
+        <ContentTab value="Tab value" />
+        <ContentTab isActive value="Tab value" />
+        <ContentTab isDisabled value="Tab value" />
+  `}
+/>

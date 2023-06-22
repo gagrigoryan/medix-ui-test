@@ -1,0 +1,207 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+.container {
+  width: 100%;
+  display: flex;
+  grid-gap: get-vw(40px);
+
+  .listTitle {
+    margin-bottom: get-vw(16px);
+  }
+}
+
+.listTitle {
+  composes: pMainSemiBold from "../../../styles/typography.module.scss";
+}
+
+.list {
+  width: get-vw(223px);
+  list-style: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 0 get-vw(40px);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-family: "Arial", "sans-serif";
+  font-weight: 300;
+  color: $typographyMain;
+  height: get-vw(20px);
+  padding: get-vw(4px) get-vw(12px);
+  border-radius: get-vw(12px);
+  margin-bottom: get-vw(16px);
+}
+
+.itemTitle {
+  composes: pSmall from "../../../styles/typography.module.scss";
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.mxExtraDarkColor {
+  background-color: $mxExtraDark;
+  color: $white;
+}
+
+.mxDarkColor {
+  background-color: $mxDark;
+  color: $white;
+}
+
+.mxMainColor {
+  background-color: $mxMain;
+  color: $white;
+}
+
+.mxMediumColor {
+  background-color: $mxMedium;
+  color: $white;
+}
+
+.mxLightColor {
+  background-color: $mxLight;
+  color: $white;
+}
+
+.mxLightGreyishColor {
+  background-color: $mxLightGreyish;
+}
+
+.mxExtraLightColor {
+  background-color: $mxExtraLight;
+}
+
+.mxWhiteColor {
+  background-color: $mxWhite;
+}
+
+.neutralActiveDarkColor {
+  background-color: $neutralActiveDark;
+  color: $white;
+}
+
+.neutralBlackColor {
+  background-color: $neutralBlack;
+  color: $white;
+}
+
+.neutralExtraDarkColor {
+  background-color: $neutralExtraDark;
+  color: $white;
+}
+
+.neutralDarkColor {
+  background-color: $neutralDark;
+  color: $white;
+}
+
+.neutralMediumColor {
+  background-color: $neutralMedium;
+  color: $white;
+}
+
+.neutralLightColor {
+  background-color: $neutralLight;
+  color: $white;
+}
+
+.neutralExtraLightColor {
+  background-color: $neutralExtraLight;
+}
+
+.neutralDarkCleanColor {
+  background-color: $neutralDarkClean;
+  color: $white;
+}
+
+.neutralMediumCleanColor {
+  background-color: $neutralMediumClean;
+  color: $white;
+}
+
+.neutralLightCleanColor {
+  background-color: $neutralLightClean;
+}
+
+.neutralActiveDark20Color {
+  background-color: $neutralActiveDark20;
+  color: $white;
+}
+
+.typographyMainColor {
+  background-color: $typographyMain;
+  color: $white;
+}
+
+.typographyMediumColor {
+  background-color: $typographyMedium;
+  color: $white;
+}
+
+.typographyLightColor {
+  background-color: $typographyLight;
+  color: $white;
+}
+
+.typographySubtextColor {
+  background-color: $typographySubtext;
+  color: $white;
+}
+
+.accentGreenDarkColor {
+  background-color: $accentGreenDark;
+  color: $white;
+}
+
+.accentGreenMediumColor {
+  background-color: $accentGreenMedium;
+  color: $white;
+}
+
+.accentGreenBrightColor {
+  background-color: $accentGreenBright;
+  color: $white;
+}
+
+.accentRedDarkColor {
+  background-color: $accentRedDark;
+  color: $white;
+}
+
+.accentRedMediumColor {
+  background-color: $accentRedMedium;
+  color: $white;
+}
+
+.accentRedBrightColor {
+  background-color: $accentRedBright;
+  color: $white;
+}
+
+.accentYellowDarkColor {
+  background-color: $accentYellowDark;
+  color: $white;
+}
+
+.accentYellowMediumColor {
+  background-color: $accentYellowMedium;
+  color: $white;
+}
+
+.accentYellowBrightColor {
+  background-color: $accentYellowBright;
+}
+
+.statusGreenColor {
+  background-color: $statusGreen;
+  color: $white;
+}
+
+.statusRedColor {
+  background-color: $statusRed;
+  color: $white;
+}

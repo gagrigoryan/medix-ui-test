@@ -1,0 +1,40 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+@import "../../styles/_elevation.scss";
+
+.notificationContainer {
+  composes: mx-elevation-hint;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: get-module(12);
+  padding: 0 get-module(5) 0 get-module(4);
+  background-color: rgba($neutralBlack, 0.9);
+  border-radius: get-vw(8px);
+}
+
+.text {
+  composes: pMain;
+  margin-right: get-module(2);
+  color: $white;
+}
+
+.icon {
+  margin-right: get-module(2);
+
+  svg path {
+    fill: $accentRedMedium;
+  }
+}
+
+.iconClose {
+  width: get-module(4);
+  height: get-module(4);
+  margin-left: get-module(2);
+
+  svg {
+    width: get-module(2);
+    height: get-module(2);
+  }
+}

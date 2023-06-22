@@ -1,0 +1,19 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+@import "../../../../styles/typography.module";
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  composes: pMainBold;
+  color: $mxMain;
+}
+
+.post {
+  composes: pMain;
+  margin-left: get-module(2);
+  color: $neutralActiveDark20;
+}

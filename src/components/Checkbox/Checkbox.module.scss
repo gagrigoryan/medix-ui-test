@@ -1,0 +1,152 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: max-content;
+
+  &:hover {
+    .box {
+      border: 2px solid $mxMedium;
+    }
+  }
+}
+
+.containerError {
+  .label {
+    color: $accentRedMedium;
+  }
+
+  .box {
+    border: 1px solid $accentRedMedium;
+  }
+
+  .input:checked + .box {
+    border: 1px solid $accentRedMedium;
+    background: none;
+  }
+
+  &:hover {
+    .box {
+      border: 1px solid $accentRedMedium;
+    }
+
+    .input:checked + .box {
+      border: 1px solid $accentRedMedium;
+      background: none;
+    }
+  }
+}
+
+.containerErrorRequired {
+  .box {
+    border: 1px solid $accentRedMedium;
+  }
+
+  .input:checked + .box {
+    border: 1px solid $accentRedMedium;
+    background: none;
+  }
+
+  &:hover {
+    .box {
+      border: 1px solid $accentRedMedium;
+    }
+
+    .input:checked + .box {
+      border: 1px solid $accentRedMedium;
+      background: none;
+    }
+  }
+}
+
+.containerDisabled {
+  cursor: not-allowed;
+
+  .box {
+    border: 1px solid $neutralMediumClean;
+  }
+
+  .label,
+  .requiredSign {
+    color: $typographySubtext;
+  }
+
+  .input:checked + .box {
+    border: 1px solid $neutralMediumClean;
+    background-color: $neutralMediumClean;
+  }
+
+  &:hover {
+    .box {
+      border: 1px solid $neutralMediumClean;
+    }
+
+    .input:checked + .box {
+      border: 1px solid $neutralMediumClean;
+      background-color: $neutralMediumClean;
+    }
+  }
+}
+
+.input {
+  display: none;
+
+  &:checked + .box {
+    border: 1px solid $neutralActiveDark;
+    background-color: $neutralActiveDark;
+
+    .checkIcon {
+      display: inline-block;
+    }
+  }
+
+  &:hover {
+    &:checked + .box {
+      border: 1px solid $mxMedium;
+      background-color: $mxMedium;
+    }
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: get-module(5);
+  height: get-module(5);
+  box-sizing: border-box;
+  border: 1px solid $neutralActiveDark;
+  border-radius: get-vw(4px);
+  margin-right: get-module(3);
+
+  .checkIcon {
+    display: none;
+    width: get-module(3);
+
+    svg {
+      width: get-module(3);
+
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  &:hover {
+    border: 2px solid $mxMedium;
+  }
+}
+
+.label {
+  composes: pMain;
+}
+
+.requiredSign {
+  composes: pMain;
+  margin-left: get-module(1);
+  color: $accentRedMedium;
+}

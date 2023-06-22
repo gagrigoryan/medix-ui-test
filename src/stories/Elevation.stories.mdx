@@ -1,0 +1,31 @@
+import { Canvas, Meta, Story, Source } from "@storybook/addon-docs/blocks";
+import ElevationWidget from "./components/ElevationWidget";
+
+<Meta title="Elevation" component="{ElevationWidget}" />
+
+export const Template = (args) => {
+    return (<ElevationWidget {...args} />);
+}
+
+# Тени
+
+<Canvas isColumn={true}>
+    <Story name="Base">
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Использование:
+
+Для реализации следует использовать классы `.mx-elevation-main, .mx-elevation-hint, .mx-elevation-dropdown, .mx-elevation-raised`
+<Source
+    language='html'
+    dark
+    format={true}
+    code={`
+        <div className="mx-elevation-main" />
+        <div className="mx-elevation-hint" />
+        <div className="mx-elevation-dropdown" />
+        <div className="mx-elevation-raised" />
+  `}
+/>

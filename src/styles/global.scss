@@ -1,0 +1,23 @@
+@import "./fonts";
+@import "./colors";
+@import "./mixins";
+@import "./_grid.scss";
+@import "./link.scss";
+@import "./_elevation.scss";
+@import "./_rcTooltip.scss";
+@import "../../node_modules/draft-js/dist/Draft.css";
+
+html,
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  padding: 0 !important;
+  margin: 0;
+  font-family: -apple-system, "NunitoSans", sans-serif;
+  color: $typographyMain;
+  font-size: get-vw(14px);
+  line-height: get-vw(20px);
+}
+
+@include make-grid();

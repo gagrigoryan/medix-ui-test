@@ -1,0 +1,43 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { MessageReply } from "../../components";
+
+<Meta title="Chat/Message/MessageReply" component={MessageReply} />
+
+export const MessageText = "I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer"
+
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "340px", padding: "20px 0"}}>
+            <MessageReply {...args} />
+        </div>
+    );
+}
+
+# Ответ на сообщение
+
+<Canvas isColumn>
+    <Story name="Base" args={{username: "Alice Cuddy", text: MessageText}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="In Process" args={{username: "Alice Cuddy", text: MessageText, isInProcess: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={MessageReply} />
+
+### Использование:
+Для использования следует импортировать компонент `MessageReply` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {MessageReply} from "marketplace-ui-kit";
+        ...
+        <MessageReply username="Alice Cuddy" text="Message text" />
+        <MessageReply username="Alice Cuddy" text="Message text" isInProcess />
+  `}
+/>

@@ -1,0 +1,79 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/_elevation.scss";
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  background-color: rgba($neutralBlack, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.popupContainerBase {
+  composes: mx-elevation-dropdown;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 get-module(6);
+  background-color: $white;
+  border-radius: get-vw(20px);
+}
+
+.popupContainer {
+  composes: popupContainerBase;
+  width: get-module(150);
+  max-height: min(get-module(180), 100vh);
+}
+
+.popupContainerSmall {
+  composes: popupContainerBase;
+  width: get-module(115);
+  max-height: min(get-module(180), 100vh);
+}
+
+.popupContainerLarge {
+  composes: popupContainerBase;
+  width: get-module(215);
+  max-height: min(get-module(195), 100vh);
+}
+
+.popupContainerXLarge {
+  composes: popupContainerBase;
+  width: get-module(300);
+  max-height: min(get-module(195), 100vh);
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: get-module(16);
+  border-bottom: 1px solid $neutralLightClean;
+}
+
+.closeButton {
+  margin-left: auto;
+}
+
+.popupFooter {
+  flex-shrink: 0;
+  width: 100%;
+  height: get-module(18);
+  border-top: 1px solid $neutralLightClean;
+}
+
+.popupContent {
+  width: 100%;
+  height: 100%;
+  padding: 0 get-module(2);
+  overflow-y: scroll;
+}

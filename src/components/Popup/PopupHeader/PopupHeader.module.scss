@@ -1,0 +1,14 @@
+@import "../../../styles/typography.module";
+@import "../../../styles/_helpers.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  composes: ellipsisText;
+  composes: headingH3SemiBold;
+}

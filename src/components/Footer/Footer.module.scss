@@ -1,0 +1,45 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/link.module";
+@import "../../styles/typography.module";
+
+.container {
+  height: get-module(29);
+  padding: 0 get-module(29);
+  background-color: $neutralBlack;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: get-module(362);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.copyright {
+  composes: pSmall;
+  color: $white50;
+  margin-top: get-module(1);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  &:not(:last-child) {
+    margin-bottom: get-module(2);
+  }
+}
+
+.link {
+  composes: mxLinkLight;
+  text-decoration: none;
+}
+
+.buttonWrapper {
+  justify-self: flex-end;
+}

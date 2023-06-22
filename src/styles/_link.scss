@@ -1,0 +1,30 @@
+@import "colors";
+@import "./typography.module.scss";
+
+.mx-link {
+  composes: pMain;
+  color: $neutralActiveDark;
+  text-decoration-line: underline;
+
+  &:hover {
+    color: $mxMedium;
+  }
+
+  &:active {
+    color: $mxExtraDark;
+  }
+}
+
+.mx-link-light {
+  composes: pMain;
+  color: $white;
+  text-decoration-line: underline;
+
+  &:hover {
+    color: $mxMedium;
+  }
+
+  &:active {
+    color: $mxLight;
+  }
+}

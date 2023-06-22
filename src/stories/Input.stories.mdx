@@ -1,0 +1,105 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {Input, VisibleIcon} from "../components";
+
+<Meta title="TextField/Input" component={Input} />
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "320px"}}>
+            <Input {...args} />
+        </div>
+    );
+}
+
+# Текстовое поле
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{label: "Label", placeholder: "Input text"}}>
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="With Description"
+        args={{label: "With Description", placeholder: "Input text", description: "Description"}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Clearable"
+        args={{label: "Clearable", placeholder: "Input text", description: "Description", isClearable: true}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Disabled"
+        args={{label: "Disabled", placeholder: "Input text", description: "Description", isDisabled: true}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Error"
+        args={{label: "Error", placeholder: "Input text", description: "Description", error: "Error message"}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="With Suffix Icon"
+        args={{
+            label: "With Suffix Icon",
+            placeholder: "Input text",
+            description: "Description",
+            isClearable: true,
+            suffixIcon: <VisibleIcon />
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Required"
+        args={{label: "Required", placeholder: "Input text", description: "Description", isRequired: true}}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Input} />
+
+### Использование:
+Для использования следует импортировать компонент `Input` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Input, VisibleIcon} from "marketplace-ui-kit";
+        ...
+        <Input label="Label" placeholder="Placeholder" />
+        <Input label="Label" placeholder="Placeholder" description="Description" />
+        <Input
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isClearable
+        />
+        <Input
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isDisabled
+        />
+        <Input
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isClearable
+            suffixIcon={<VisibleIcon />}
+            onSuffixIconClick={() => {}}
+        />
+        <Input
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+            isRequired
+        />
+  `}
+/>

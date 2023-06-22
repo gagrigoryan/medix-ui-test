@@ -1,0 +1,22 @@
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+@import "../../../styles/typography.module";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: get-module(10);
+  grid-row-gap: get-module(15);
+}
+
+.card {
+  width: 100%;
+  height: get-vw(224px);
+  background-color: $white;
+  border-radius: get-vw(20px);
+}
+
+.cardTitle {
+  composes: pMainExtraLight;
+  margin-bottom: get-module(2);
+}

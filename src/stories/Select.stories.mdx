@@ -1,0 +1,123 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {Select} from "../components";
+
+<Meta title="Dropdown/Select" component={Select} />
+
+export const Template = (args) => {
+    return (
+        <div style={{width: "320px"}}>
+            <Select {...args} />
+        </div>
+    );
+}
+
+export const selectOptions = [
+    {
+        value: "1",
+        label: "Sample text 1"
+    },
+    {
+        value: "2",
+        label: "Sample text 2"
+    },
+    {
+        value: "3",
+        label: "Sample text 3"
+    },
+    {
+        value: "4",
+        label: "Sample text 4"
+    },
+]
+
+# Поле с выпадающим списком
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{ options: selectOptions, placeholder: "Select text"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Label" args={{ options: selectOptions, label: "Label", placeholder: "Select text"}}>
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="With Label & Description"
+        args={{ options: selectOptions, label: "Label & Description", description: "Description", placeholder: "Select text"}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="With Error"
+        args={{
+            options: selectOptions,
+            label: "Error",
+            description: "Description",
+            placeholder: "Select text",
+            error: "Error message"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Searchable"
+        args={{
+            options: selectOptions,
+            label: "Searchable",
+            description: "Description",
+            placeholder: "Select text",
+            isSearchable: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Disabled"
+        args={{
+            options: selectOptions,
+            label: "Disabled",
+            description: "Description",
+            placeholder: "Select text",
+            isDisabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Select} />
+
+### Использование:
+Для использования следует импортировать компонент `Select` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Select} from "marketplace-ui-kit";
+        const selectOptions = [
+            {
+                value: "1",
+                label: "Sample text 1"
+            },
+            {
+                value: "2",
+                label: "Sample text 2"
+            },
+            {
+                value: "3",
+                label: "Sample text 3"
+            },
+            {
+                value: "4",
+                label: "Sample text 4"
+            }
+        ]
+        ...
+        <Select
+            options={selectOptions}
+            label="Label"
+            placeholder="Placeholder"
+            description="Description"
+        />
+  `}
+/>

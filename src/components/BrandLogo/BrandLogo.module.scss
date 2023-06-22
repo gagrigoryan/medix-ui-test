@@ -1,0 +1,7 @@
+@import "../../styles/mixins";
+
+.logo {
+  display: block;
+  width: get-module(44.5);
+  //height: get-module(14.5);
+}

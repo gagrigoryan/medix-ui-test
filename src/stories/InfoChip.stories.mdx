@@ -1,0 +1,50 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {InfoChip, TrashIcon} from "../components";
+
+<Meta title="Control/Info Chip" component={InfoChip} />
+
+export const Template = (args) => {
+    return (
+        <div style={{display: "flex", alignItems: "center", gridGap: "20px"}}>
+            <InfoChip {...args} />
+            <InfoChip {...args} isSmall />
+        </div>
+    );
+}
+
+# Чип (Info)
+
+<Canvas isColumn={true}>
+    <Story name="Base" args={{value: "Chips Text"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Icon" args={{value: "Chips Text", isSmall: false, icon: <TrashIcon />, onClick: undefined}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="With Icon Clicked" args={{value: "Chips Text", icon: <TrashIcon />, onClick: () => {}}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={InfoChip} />
+
+### Использование:
+Для использования следует импортировать компонент `InfoChip` из `marketplace-ui-kit`.
+
+Если задать параметр `onClick` отличное от `undefined`, то заданная иконка встанет в правую сторону и будет кликабельной.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {InfoChip, TrashIcon} from "marketplace-ui-kit";
+        ...
+        <InfoChip value="Chips Text" />
+        <InfoChip isSmall value="Chips Text" />
+        <InfoChip value="Chips Text" icon={<TrashIcon />} />
+        <InfoChip isSmall value="Chips Text" icon={<TrashIcon />} />
+        <InfoChip value="Chips Text" icon={<TrashIcon />} onClick={() => {}} />
+        <InfoChip isSmall value="Chips Text" icon={<TrashIcon />} onClick={() => {}} />
+  `}
+/>

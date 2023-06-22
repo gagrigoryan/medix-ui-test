@@ -1,0 +1,52 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+@import "../../../../styles/typography.module";
+@import "../../../../styles/_helpers.scss";
+
+.container {
+  width: 100%;
+  padding: get-module(3) get-module(2) get-module(2);
+  box-sizing: border-box;
+  background-color: $white;
+  border-radius: get-vw(8px);
+}
+
+.wrapper {
+  margin: 0;
+}
+
+.title {
+  composes: pMainSemiBold;
+  composes: ellipsisText;
+}
+
+.text {
+  composes: pSmallSemiBold;
+  composes: ellipsisText;
+  color: $typographyLight;
+}
+
+.subtitle {
+  composes: text;
+  padding: 0 get-module(1);
+}
+
+.image {
+  width: 100%;
+  height: get-module(25);
+  margin: get-module(3) 0;
+  object-fit: cover;
+  border-radius: get-vw(8px);
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: get-module(3);
+}
+
+.textDate {
+  composes: text;
+  text-align: right;
+}

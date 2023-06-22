@@ -1,0 +1,27 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+
+.container {
+  composes: pMainSemiBold;
+  height: get-module(10);
+  padding: 0 get-module(7);
+  border-radius: get-module(5);
+  color: $white;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.containerSmall {
+  height: get-module(7);
+  padding: 0 get-module(5);
+}
+
+.containerLight {
+  color: $typographyMain;
+}

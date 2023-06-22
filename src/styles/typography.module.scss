@@ -1,0 +1,161 @@
+@import "./mixins.scss";
+
+.headingH1 {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: get-vw(24px);
+  line-height: get-vw(32px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH2 {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: get-vw(18px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH2Bold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: get-vw(18px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH2SemiBold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 600;
+  font-size: get-vw(18px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH2Light {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 300;
+  font-size: get-vw(18px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH3 {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: get-vw(16px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH3Bold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: get-vw(16px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH3SemiBold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 600;
+  font-size: get-vw(16px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.headingH3ExtraLight {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 200;
+  font-size: get-vw(16px);
+  line-height: get-vw(24px);
+  margin: 0;
+  padding: 0;
+}
+
+.pMain {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: get-vw(14px);
+  line-height: get-vw(20px);
+  margin: 0;
+  padding: 0;
+}
+
+.pMainBold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: get-vw(14px);
+  line-height: get-vw(20px);
+  margin: 0;
+  padding: 0;
+}
+
+.pMainSemiBold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 600;
+  font-size: get-vw(14px);
+  line-height: get-vw(20px);
+  margin: 0;
+  padding: 0;
+}
+
+.pMainExtraLight {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 200;
+  font-size: get-vw(14px);
+  line-height: get-vw(20px);
+  margin: 0;
+  padding: 0;
+}
+
+.pSmall {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: get-vw(12px);
+  line-height: get-vw(16px);
+  margin: 0;
+  padding: 0;
+}
+
+.pSmallBold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: get-vw(12px);
+  line-height: get-vw(16px);
+  margin: 0;
+  padding: 0;
+}
+
+.pSmallSemiBold {
+  font-family: "NunitoSans", "sans-serif";
+  font-style: normal;
+  font-weight: 600;
+  font-size: get-vw(12px);
+  line-height: get-vw(16px);
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,103 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/baseInput.module";
+
+.editorContainer {
+  composes: inputContainer;
+
+  :global(.public-DraftStyleDefault-ltr),
+  :global(.public-DraftStyleDefault-block) {
+    margin: 0;
+  }
+
+  :global(.public-DraftStyleDefault-block .public-DraftStyleDefault-ltr) {
+    display: none;
+  }
+
+  &:hover {
+    .editorWrapper {
+      border: 1px solid $neutralActiveDark;
+    }
+  }
+}
+
+.editorContainerError {
+  composes: inputContainerError;
+
+  .editorWrapper,
+  .editorWrapperFocused {
+    border: 1px solid $accentRedMedium;
+  }
+
+  &:hover {
+    .editorWrapper {
+      border: 1px solid $accentRedMedium;
+    }
+  }
+}
+
+.editorContainerDisabled {
+  cursor: not-allowed;
+
+  .editorWrapper {
+    background-color: $neutralLightClean;
+    color: $typographyLight;
+    border: none;
+  }
+
+  svg path {
+    fill: $neutralLight;
+  }
+
+  &:hover {
+    .editorWrapper {
+      border: none;
+    }
+  }
+}
+
+.editorWrapper {
+  composes: baseInput;
+  padding: get-module(10.5) get-module(9) get-module(2.5) get-module(3);
+}
+
+.editorWrapperFocused {
+  border: 1px solid $mxMain;
+}
+
+.editorActionWrapper {
+  position: absolute;
+  top: get-module(6);
+  left: 1px;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 2px);
+  height: get-module(8);
+  box-sizing: border-box;
+  padding: 0 get-module(3);
+  border-bottom: 1px solid $neutralLight;
+}
+
+.editorActionButton {
+  margin-right: get-module(4);
+
+  &:first-child {
+    display: none;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.editorActionButtonActive {
+  svg path {
+    fill: $mxMedium;
+  }
+}
+
+.buttonClearable {
+  position: absolute;
+  right: get-module(3);
+  top: get-module(16);
+}

@@ -1,0 +1,26 @@
+$grid-columns: 12;
+
+.mx-row {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  grid-gap: 20px;
+  grid-auto-columns: auto;
+}
+
+@mixin make-grid($columns: $grid-columns) {
+  @if $columns > 0 {
+    @for $i from 1 through $columns {
+      .mx-col-#{$i} {
+        grid-column: auto / span $i;
+      }
+    }
+
+    @for $i from 1 through ($columns - 1) {
+      .mx-start-#{$i} {
+        grid-column-start: $i;
+      }
+    }
+  }
+}

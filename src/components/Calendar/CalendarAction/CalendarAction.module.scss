@@ -1,0 +1,27 @@
+@import "../../../styles/mixins";
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: get-module(9);
+}
+
+.arrowButtonNext {
+  transform: rotate(180deg);
+}
+
+.selectWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.monthContainer {
+  width: get-module(26);
+  height: get-module(9);
+}
+
+.yearContainer {
+  width: get-module(22);
+  height: get-module(9);
+}

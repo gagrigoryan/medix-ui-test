@@ -1,0 +1,108 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/typography.module";
+@import "../../styles/_elevation.scss";
+
+.container {
+  display: flex;
+  cursor: pointer;
+
+  &:hover {
+    .toggleContainer {
+      background-color: $mxMedium;
+    }
+  }
+}
+
+.containerDisabled {
+  cursor: not-allowed;
+
+  .label {
+    color: $typographySubtext;
+  }
+
+  .toggleContainer {
+    background-color: $neutralMediumClean;
+
+    .switch {
+      opacity: 0.6;
+    }
+  }
+
+  .toggleContainerChecked {
+    .switch {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    .toggleContainer {
+      background-color: $neutralMediumClean;
+    }
+  }
+}
+
+.containerError {
+  .label {
+    color: $accentRedMedium;
+  }
+
+  .toggleContainer {
+    background-color: $accentRedMedium;
+  }
+
+  &:hover {
+    .toggleContainer {
+      background-color: $accentRedMedium;
+    }
+  }
+}
+
+.input {
+  display: none;
+}
+
+.toggleContainer {
+  position: relative;
+  width: get-module(9);
+  height: get-module(5);
+  margin-right: get-module(3);
+  border-radius: get-vw(16px);
+  background-color: $mxLightGreyish;
+  overflow: hidden;
+
+  &:hover {
+    background-color: $mxMedium;
+  }
+}
+
+.toggleContainerChecked {
+  background-color: $neutralActiveDark;
+
+  .switch {
+    left: get-module(4.5);
+  }
+}
+
+.switch {
+  composes: mx-elevation-raised;
+  position: absolute;
+  top: get-vw(2px);
+  bottom: get-vw(2px);
+  left: get-vw(2px);
+  width: get-module(4);
+  height: get-module(4);
+  border-radius: 50%;
+  background-color: $white;
+  transition: left 0.2s ease;
+}
+
+.label {
+  composes: pMain;
+  color: $typographyMain;
+}
+
+.requiredSign {
+  margin-left: get-module(1);
+  color: $accentRedMedium;
+}

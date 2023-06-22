@@ -1,0 +1,152 @@
+import { Canvas, Meta, Story, ArgsTable, Source } from "@storybook/addon-docs/blocks";
+import IconsWidget from "./components/IconsWidget";
+import {
+    StarIcon,
+    PlusIcon,
+    MinusIcon,
+    RotateIcon,
+    TrashIcon,
+    CloseIcon,
+    VisibleIcon,
+    ErrorIcon,
+    FontBoldIcon,
+    FontItalicIcon,
+    FontUnderlinedIcon,
+    ListNumberedIcon,
+    ListBulletedIcon,
+    ChevronLeftIcon,
+    ChevronLeftLargeIcon,
+    ChevronFilledIcon,
+    CalendarIcon,
+    ReplyIcon,
+    SentIcon,
+    DeliveredIcon,
+    AttachIcon,
+    PaperPlaneIcon,
+    SearchIcon,
+    RemoteIcon,
+    ArrowLeftIcon,
+    MenuIcon,
+    PersonIcon,
+    CheckIcon,
+    DownloadIcon,
+    USAIcon
+} from "../components/Icons";
+
+<Meta title="Icons" component={IconsWidget} />
+
+export const Template = (args) => <IconsWidget {...args} />
+
+# Иконки
+
+<Canvas isColumn={true}>
+    <Story name="Star" args={{icon: <StarIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Plus" args={{icon: <PlusIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Minus" args={{icon: <MinusIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Rotate" args={{icon: <RotateIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Trash" args={{icon: <TrashIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Close" args={{icon: <CloseIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Visible" args={{icon: <VisibleIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Error" args={{icon: <ErrorIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Font Bold" args={{icon: <FontBoldIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Font Italic" args={{icon: <FontItalicIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Font Underlined" args={{icon: <FontUnderlinedIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="List Numbered" args={{icon: <ListNumberedIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="List Bulleted" args={{icon: <ListBulletedIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Chevron Filled" args={{icon: <ChevronFilledIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Chevron Left" args={{icon: <ChevronLeftIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Chevron Left Large" args={{icon: <ChevronLeftLargeIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Arrow Left" args={{icon: <ArrowLeftIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Calendar" args={{icon: <CalendarIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Reply" args={{icon: <ReplyIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Sent" args={{icon: <SentIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Delivered" args={{icon: <DeliveredIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Attach" args={{icon: <AttachIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Paper Plane" args={{icon: <PaperPlaneIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Search" args={{icon: <SearchIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Remote" args={{icon: <RemoteIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Menu" args={{icon: <MenuIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Person" args={{icon: <PersonIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Check" args={{icon: <CheckIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Download" args={{icon: <DownloadIcon />}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="USA" args={{icon: <USAIcon />}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={StarIcon} />
+
+### Использование:
+Для использования следует импортировать компонент конкретной иконки из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {StarIcon, EIconSize} from "marketplace-ui-kit";
+        ...
+        <StarIcon size={EIconSize.XSmall} />
+        <StarIcon size={EIconSize.Small} />
+        <StarIcon /> // <StarIcon size={EIconSize.Normal} />
+        <StarIcon size={EIconSize.Large} />
+  `}
+/>

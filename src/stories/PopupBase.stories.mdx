@@ -1,0 +1,106 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {PopupBase, PopupHeader, PopupFooterWithActions, EPopupSize} from "../components";
+
+<Meta title="Popup/PopupBase" component={PopupBase} />
+
+export const getPopupProps = (title = "Заголовок") => ({
+    header: <PopupHeader title={title} />,
+    footer: (
+        <>
+            <PopupFooterWithActions buttonLabel="Save" secondaryButtonLabel="Cancel">
+                <p>Additional text</p>
+            </PopupFooterWithActions>
+        </>
+    ),
+    isClosable: true,
+})
+
+export const Template = ({...args}) => {
+    return (
+        <PopupBase
+            header={<p>Шапка</p>}
+            footer={<p>Подвал</p>}
+            {...args}
+        >
+            {args.children ? args.children : <div style={{padding: "12px 0"}}>
+               Контент попапа
+            </div>}
+        </PopupBase>
+    )
+}
+
+# Модальное окно базовое
+
+<Canvas isColumn>
+    <Story name="Base">
+        {Template.bind({})}
+    </Story>
+    <Story name="With Popup Widget"
+        args={{...getPopupProps("Попап виджеты")}}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story name="With Long Content"
+        args={{
+            ...getPopupProps("С большим контентом"),
+            children: (
+                <>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </>
+            )
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story name="Small"
+       args={{
+           ...getPopupProps("Размер Small"),
+           size: EPopupSize.Small,
+       }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story name="Large"
+       args={{
+           ...getPopupProps("Размер Large"),
+           size: EPopupSize.Large
+       }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story name="XLarge"
+       args={{
+           ...getPopupProps("Размер XLarge"),
+           size: EPopupSize.XLarge
+       }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={PopupBase} />
+
+### Использование:
+Для использования следует импортировать компонент `PopupBase` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {PopupBase} from "marketplace-ui-kit";
+        ...
+        <PopupBase
+            {...props}
+        >
+            контент попапа
+        </PopupBase>
+  `}
+/>

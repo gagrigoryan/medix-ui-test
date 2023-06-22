@@ -1,0 +1,83 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+@import "../../../styles/link.module";
+
+.textContainer {
+  composes: mxLink;
+  height: get-module(6);
+  background: none;
+  border: none;
+  text-decoration-line: none;
+
+  &:disabled {
+    color: $neutralLight;
+  }
+}
+
+.textContainerDecorated {
+  text-decoration-line: underline;
+}
+
+.textContainerIcon {
+  display: flex;
+  align-items: center;
+  text-decoration-line: none;
+
+  &:hover {
+    .icon path {
+      stroke: $mxMedium;
+    }
+  }
+
+  &:active {
+    .icon path {
+      stroke: $mxExtraDark;
+    }
+  }
+
+  &:disabled {
+    .icon path {
+      stroke: $neutralLight;
+    }
+  }
+}
+
+.textContainerEnd {
+  flex-direction: row-reverse;
+
+  .icon {
+    margin-right: 0;
+    margin-left: get-module(1);
+  }
+}
+
+.textContainerLight {
+  composes: mxLinkLight;
+  height: get-module(6);
+  background: none;
+  border: none;
+
+  .icon path {
+    stroke: $white;
+  }
+
+  &:active {
+    color: $mxLight;
+
+    .icon path {
+      stroke: $mxLight;
+    }
+  }
+
+  &:disabled {
+    color: $white50;
+
+    .icon path {
+      stroke: $white50;
+    }
+  }
+}
+
+.icon {
+  margin-right: get-module(1);
+}

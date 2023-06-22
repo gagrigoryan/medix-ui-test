@@ -1,0 +1,81 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Switcher } from "../components";
+
+<Meta title="Control/Switcher" component={Switcher} />
+
+export const Template = (args) => {
+    return (<Switcher {...args} />);
+}
+
+export const switcherItems = [
+    {
+        value: "1",
+        label: "Sample text 1"
+    },
+    {
+        value: "2",
+        label: "Sample text 2"
+    },
+    {
+        value: "3",
+        label: "Sample text 3"
+    },
+    {
+        value: "4",
+        label: "Sample text 4"
+    },
+]
+
+# Переключатель (Switcher)
+
+<Canvas columns={2}>
+    <Story name="Base" args={{items: switcherItems, onChange: (item) => {console.log(item)}}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{items: switcherItems, isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Default Active" args={{items: switcherItems, defaultActiveItem: switcherItems[1]}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Default Active Disabled" args={{items: switcherItems, defaultActiveItem: switcherItems[1], isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Switcher} />
+
+### Использование:
+Для использования следует импортировать компонент `Switcher` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {Switcher} from "marketplace-ui-kit";
+        export const switcherItems = [
+            {
+                value: "1",
+                label: "Sample text 1"
+            },
+            {
+                value: "2",
+                label: "Sample text 2"
+            },
+            {
+                value: "3",
+                label: "Sample text 3"
+            },
+            {
+                value: "4",
+                label: "Sample text 4"
+            }
+        ];
+        ...
+        <Switcher items={switcherItems} onChange={(item) => console.log(item)}} />
+        <Switcher isDisabled items={switcherItems} />
+        <Switcher defaultActiveItem={switcherItems[1]} items={switcherItems} />
+        <Switcher isDisabled defaultActiveItem={switcherItems[1]} items={switcherItems} />
+  `}
+/>

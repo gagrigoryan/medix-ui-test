@@ -1,0 +1,20 @@
+image: ubuntu_20.04:latest
+
+stages:
+  - deploy
+
+before_script:
+  - eval $(ssh-agent -s)
+
+deploy:
+  stage: deploy
+  script:
+    - CURRENT_DIR=$(pwd) && cd ~ && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && . ~/.nvm/nvm.sh && cd $CURRENT_DIR
+    - nvm install
+    - npm i yarn -g
+    - yarn
+    - yarn build-storybook
+    - export ANSIBLE_HOST_KEY_CHECKING=False
+    - ansible-playbook ./deploy.yml -i frontend-only-v2.snpdev.ru, --extra-vars="project=medix-ui" --extra-vars="build_type=static"
+  only:
+    - testing

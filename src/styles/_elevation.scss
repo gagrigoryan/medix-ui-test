@@ -1,0 +1,17 @@
+@import "./mixins.scss";
+
+.mx-elevation-main {
+  box-shadow: 0 0 get-vw(24px) rgba(0, 0, 0, 0.1);
+}
+
+.mx-elevation-hint {
+  box-shadow: 0 get-vw(3px) get-vw(18px) rgba(0, 0, 0, 0.14);
+}
+
+.mx-elevation-dropdown {
+  box-shadow: 0 get-vw(4px) get-vw(16px) rgba(0, 0, 0, 0.18);
+}
+
+.mx-elevation-raised {
+  box-shadow: 0 get-vw(1px) get-vw(6px) rgba(0, 0, 0, 0.2);
+}

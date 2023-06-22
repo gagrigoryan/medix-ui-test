@@ -1,0 +1,116 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+@import "../../../styles/typography.module";
+@import "../../../styles/elevation.module";
+
+.list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: get-module(10);
+  height: get-module(10);
+}
+
+.buttonWrapperMultiple {
+  .buttonContainerSelected,
+  .buttonContainerSelectedColored {
+    width: get-module(10);
+    border-radius: unset;
+
+    &:hover {
+      border-radius: unset;
+    }
+  }
+
+  .buttonContainerFirst {
+    border-bottom-left-radius: get-vw(16px);
+    border-top-left-radius: get-vw(16px);
+
+    &:hover {
+      border-bottom-left-radius: get-vw(16px);
+      border-top-left-radius: get-vw(16px);
+    }
+  }
+
+  .buttonContainerLast {
+    border-bottom-right-radius: get-vw(16px);
+    border-top-right-radius: get-vw(16px);
+
+    &:hover {
+      border-bottom-right-radius: get-vw(16px);
+      border-top-right-radius: get-vw(16px);
+    }
+  }
+}
+
+.buttonWrapperMultipleFirst {
+}
+
+.buttonWrapperMultipleLast {
+}
+
+.buttonContainer {
+  composes: pSmall;
+  composes: elevationHintOnHover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: get-module(8);
+  height: get-module(8);
+  color: $typographyMain;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+    background-color: $mxMedium;
+    border-radius: 50%;
+  }
+}
+
+.buttonContainerNotAvailable {
+  color: $neutralMedium;
+
+  &:hover {
+    color: $neutralMedium;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.buttonContainerToday {
+  background-color: $mxExtraLight;
+  border-radius: 50%;
+}
+
+.buttonContainerSelected {
+  color: $white;
+  background-color: $neutralActiveDark;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $neutralActiveDark;
+    box-shadow: none;
+  }
+}
+
+.buttonContainerSelectedColored {
+  color: $white;
+  background-color: $mxMedium;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $mxMedium;
+    box-shadow: none;
+  }
+}

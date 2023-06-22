@@ -1,0 +1,60 @@
+import { Canvas, Meta, Story, Source, ArgsTable } from "@storybook/addon-docs/blocks";
+import {NumberPicker} from "../components";
+import {ENumberPickerSize} from "../domain/entities/field";
+
+<Meta title="Picker/NumberPicker" component={NumberPicker} />
+
+export const Template = (args) => {
+    return (
+        <NumberPicker {...args} />
+    );
+}
+
+# Числовое поле
+
+<Canvas>
+    <Story name="Small" args={{label: "Small size", description: "Number Picker", size: ENumberPickerSize.Small}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Normal" args={{label: "Normal size", description: "Number Picker"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Large" args={{label: "Large size", description: "Number Picker", size: ENumberPickerSize.Large}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Error" args={{label: "Error", description: "Number Picker", error: "Error text"}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Disabled" args={{label: "Disabled", description: "Number Picker", isDisabled: true}}>
+        {Template.bind({})}
+    </Story>
+    <Story name="Required" args={{label: "Required", description: "Number Picker", isRequired: true}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable of={NumberPicker} />
+
+### Использование:
+Для использования следует импортировать компонент `NumberPicker` из `marketplace-ui-kit`.
+
+<Source
+    language='tsx'
+    dark
+    format={true}
+    code={`
+        import {NumberPicker, ENumberPickerSize} from "marketplace-ui-kit";
+        ...
+        <NumberPicker label="Label" description="Placeholder" />
+        <NumberPicker
+            label="Label"
+            description="Placeholder"
+            size={ENumberPickerSize.Small}
+        />
+        <NumberPicker
+            label="Label"
+            description="Placeholder"
+            size={ENumberPickerSize.Large}
+        />
+  `}
+/>

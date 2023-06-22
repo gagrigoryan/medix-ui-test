@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/_elevation.scss";
+@import "../../styles/typography.module";
+
+.overlayWrapper {
+  :global(.rc-tooltip-inner) {
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    min-height: unset;
+  }
+}
+
+.tooltipContainer {
+  composes: mx-elevation-dropdown;
+  composes: pSmall;
+  display: block;
+  max-width: get-module(60);
+  background-color: $neutralBlack;
+  padding: get-module(1.5) get-module(3);
+  border-radius: get-vw(8px);
+  color: $white;
+}
+
+.contentWrapper {
+  display: table;
+}

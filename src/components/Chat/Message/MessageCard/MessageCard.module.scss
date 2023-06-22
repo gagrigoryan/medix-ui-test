@@ -1,0 +1,58 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+
+.container {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.avatar {
+  margin-right: get-module(3);
+}
+
+.wrapper {
+  width: 100%;
+  padding: get-module(3) get-module(4) get-module(2);
+  box-sizing: border-box;
+  background-color: $mxExtraLight;
+  border-radius: get-vw(20px) get-vw(20px) 0 get-vw(20px);
+}
+
+.wrapperIncoming {
+  background-color: $neutralExtraLight;
+  border-radius: get-vw(20px) get-vw(20px) get-vw(20px) 0;
+
+  .infoWrapper {
+    flex-direction: row-reverse;
+  }
+
+  .infoButton {
+    transform: translateX(get-module(1));
+  }
+}
+
+.messageItem {
+  margin-bottom: get-module(2);
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: get-module(1);
+}
+
+.infoButton {
+  transform: translateX(get-module(-1));
+
+  i {
+    width: get-module(4);
+    height: get-module(4);
+  }
+
+  svg {
+    width: get-module(3);
+    height: get-module(3);
+  }
+}

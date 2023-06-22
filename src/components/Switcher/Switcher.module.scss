@@ -1,0 +1,95 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/typography.module";
+
+.switcherContainer {
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.switcherItem {
+  &:hover + .switcherItem {
+    .switcherButton {
+      border-left: none;
+    }
+  }
+}
+
+.switcherButton {
+  composes: pMain;
+  height: get-module(10);
+  padding: 0 get-module(4);
+  color: $typographyMain;
+  background: none;
+  border: 1px solid $neutralActiveDark;
+  border-left: none;
+  cursor: pointer;
+
+  &:hover {
+    padding: 0 calc(get-module(4) - 1px);
+    border: 2px solid $mxMedium;
+    margin-left: -1px;
+  }
+
+  &:disabled {
+    padding: 0 get-module(4);
+    margin-left: 0;
+    color: $typographySubtext;
+    border: 1px solid $neutralMediumClean;
+    border-left: none;
+    cursor: not-allowed;
+  }
+}
+
+.switcherButtonFirst {
+  border: 1px solid $neutralActiveDark;
+  border-radius: get-vw(8px) 0 0 get-vw(8px);
+
+  &:hover {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &:disabled {
+    color: $typographySubtext;
+    border: 1px solid $neutralMediumClean;
+  }
+}
+
+.switcherButtonLast {
+  border: 1px solid $neutralActiveDark;
+  border-left: none;
+  border-radius: 0 get-vw(8px) get-vw(8px) 0;
+
+  &:hover {
+    margin-right: 0;
+    margin-left: -1px;
+  }
+
+  &:disabled {
+    color: $typographySubtext;
+    border: 1px solid $neutralMediumClean;
+    border-left: none;
+    margin-left: 0;
+  }
+}
+
+.switcherButtonActive {
+  color: $white;
+  background-color: $neutralActiveDark;
+
+  &:hover {
+    border-color: $neutralActiveDark;
+  }
+
+  &:disabled {
+    color: $white50;
+    background-color: $neutralMediumClean;
+    border-color: $neutralMediumClean;
+  }
+}

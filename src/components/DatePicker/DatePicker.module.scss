@@ -1,0 +1,28 @@
+@import "../../styles/mixins";
+
+.container {
+  position: relative;
+  width: get-module(32);
+  min-width: get-module(32);
+
+  .labelContainer {
+    width: 100%;
+  }
+}
+
+.containerDouble {
+  width: get-module(57);
+  min-width: get-module(57);
+}
+
+.inputContainer {
+  width: 100%;
+  min-width: 100%;
+  padding-right: get-module(10);
+}
+
+.calendarWrapper {
+  position: absolute;
+  margin: get-module(1) 0;
+  z-index: 2;
+}

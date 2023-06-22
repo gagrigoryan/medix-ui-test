@@ -1,0 +1,129 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+.iconContainer {
+  height: unset;
+  padding: 0;
+  border-radius: unset;
+  background: none;
+  border: none;
+
+  svg path {
+    stroke: $neutralActiveDark;
+  }
+
+  &:hover {
+    svg path {
+      stroke: $mxMedium;
+    }
+  }
+
+  &:active {
+    svg path {
+      stroke: $mxExtraDark;
+    }
+  }
+
+  &:disabled {
+    svg path {
+      stroke: $neutralLight;
+    }
+  }
+}
+
+.iconContainerFilled {
+  svg path {
+    stroke: none;
+    fill: $neutralActiveDark;
+  }
+
+  &:hover {
+    svg path {
+      stroke: none;
+      fill: $mxMedium;
+    }
+  }
+
+  &:active {
+    svg path {
+      stroke: none;
+      fill: $mxExtraDark;
+    }
+  }
+
+  &:disabled {
+    svg path {
+      stroke: none;
+      fill: $neutralLight;
+    }
+  }
+}
+
+.iconContainerLight {
+  svg path {
+    stroke: $white;
+  }
+
+  &:active {
+    svg path {
+      stroke: $mxLightGreyish;
+    }
+  }
+
+  &:disabled {
+    svg path {
+      stroke: $white50;
+    }
+  }
+}
+
+.iconContainerRounded {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: get-module(10);
+  height: get-module(10);
+  border-radius: 50%;
+  background-color: $white;
+
+  &:hover {
+    background-color: $mxMedium;
+
+    svg path {
+      stroke: $white;
+    }
+  }
+
+  &:active {
+    background-color: $mxExtraDark;
+
+    svg path {
+      stroke: $white;
+    }
+  }
+
+  &:disabled {
+    &:hover {
+      background-color: $white;
+
+      svg path {
+        stroke: $neutralLight;
+      }
+    }
+  }
+}
+
+.iconContainerRoundedLight {
+  composes: iconContainerRounded;
+  background-color: $neutralActiveDark;
+
+  &:disabled {
+    &:hover {
+      background-color: $neutralActiveDark;
+
+      svg path {
+        stroke: $white50;
+      }
+    }
+  }
+}

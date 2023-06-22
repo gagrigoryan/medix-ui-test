@@ -1,0 +1,9 @@
+@import "./_link.scss";
+
+.mxLink {
+  composes: mx-link;
+}
+
+.mxLinkLight {
+  composes: mx-link-light;
+}

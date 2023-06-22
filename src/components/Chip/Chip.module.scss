@@ -1,0 +1,43 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/typography.module";
+
+.container {
+  composes: pMain;
+  height: get-module(10);
+  padding: 0 get-module(4);
+  color: $typographyMain;
+  background: none;
+  border: 1px solid $neutralActiveDark;
+  border-radius: get-vw(8px);
+  cursor: pointer;
+
+  &:hover {
+    padding: 0 calc(get-module(4) - 1px);
+    border: 2px solid $mxMedium;
+  }
+
+  &:disabled {
+    color: $typographySubtext;
+    border: 1px solid $neutralMediumClean;
+    padding: 0 get-module(4);
+    cursor: not-allowed;
+  }
+}
+
+.containerActive {
+  color: $white;
+  background-color: $neutralActiveDark;
+  border: none;
+
+  &:hover {
+    border: none;
+    padding: 0 get-module(4);
+  }
+
+  &:disabled {
+    color: $white50;
+    background-color: $neutralMediumClean;
+    border: none;
+  }
+}

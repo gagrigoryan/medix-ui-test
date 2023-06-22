@@ -1,0 +1,46 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/colors";
+@import "../../../../styles/link.module";
+@import "../../../../styles/typography.module";
+@import "../../../../styles/_helpers.scss";
+
+.container {
+  width: 86%;
+}
+
+.link {
+  composes: mxLink;
+  composes: pSmall;
+  composes: ellipsisText;
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  color: $typographyMedium;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  margin: get-module(1) 0;
+}
+
+.title {
+  composes: headingH3SemiBold;
+}
+
+.icon {
+  margin-right: get-module(2);
+
+  svg path {
+    fill: $neutralMedium;
+  }
+}
+
+.text {
+  composes: pSmall;
+  color: $typographyLight;
+
+  &:not(:last-child) {
+    margin-right: get-module(3);
+  }
+}
