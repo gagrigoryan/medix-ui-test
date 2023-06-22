@@ -73,7 +73,7 @@
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -o docs",
     "prettier": "prettier --write 'src/**/**/*.{js,ts,tsx,scss}'",
     "prettier:check": "prettier --check 'src/**/**/*.{js,ts,tsx,scss}'",
     "lint": "eslint 'src/**/**/*.{js,ts,tsx}'",
