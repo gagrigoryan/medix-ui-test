@@ -12,6 +12,7 @@
 /build
 /lib
 /storybook-static
+/docs
 
 # misc
 .DS_Store
